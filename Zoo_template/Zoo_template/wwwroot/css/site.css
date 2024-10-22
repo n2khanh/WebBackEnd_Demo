@@ -1,0 +1,92 @@
+﻿/* Body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+    
+}
+
+/* Navbar */
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+    nav ul li {
+        float: left;
+    }
+
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+.Hello {
+    float: right;
+}
+
+
+.nav-link.active, .nav-link:hover {
+     color: #007bff !important; /* Làm nổi bật link được chọn */
+     background-color: #212529;
+     border-radius: 5px;
+}
+
+/* Jumbotron (Banner lớn ở trang chủ) */
+.jumbotron {
+    background-color: #e9ecef;
+    padding: 3rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+    .jumbotron h1 {
+        font-size: 2.5rem;
+        color: #007bff;
+    }
+
+    .jumbotron p {
+        font-size: 1.2rem;
+        color: #555;
+    }
+
+.btn-lg {
+    margin: 10px;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: #343a40;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+    footer p {
+        margin: 0;
+        font-size: 1rem;
+    }
+
+/* Tạo khoảng cách giữa các phần */
+.container {
+    margin-bottom: 60px;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+    .jumbotron h1 {
+        font-size: 2rem;
+    }
+}

@@ -1,0 +1,81 @@
+/* _content/Zoo_template/Views/Shared/_Layout.cshtml.rz.scp.css */
+/* Layout-specific styles */
+
+/* Navbar Customization */
+.navbar[b-4qb7c8qijx] {
+    background-color: #212529; /* Màu nền tối cho navbar */
+    border-bottom: 3px solid #007bff; /* Đường viền dưới màu xanh lam */
+}
+
+.navbar-brand[b-4qb7c8qijx] {
+    font-size: 1.8rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link[b-4qb7c8qijx] {
+    font-size: 1.1rem;
+    color: #dcdcdc; /* Màu sáng cho text */
+    padding: 10px 15px;
+    transition: color 0.3s ease;
+}
+
+    .navbar-nav .nav-link:hover[b-4qb7c8qijx],
+    .navbar-nav .nav-link.active[b-4qb7c8qijx] {
+        color: #007bff; /* Màu khi hover hoặc đang active */
+        background-color: #2a2d31; /* Màu nền khi hover */
+        border-radius: 5px;
+    }
+
+/* Footer Customization */
+footer[b-4qb7c8qijx] {
+    background-color: #343a40; /* Màu nền tối cho footer */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+    footer p[b-4qb7c8qijx] {
+        margin: 0;
+        font-size: 1rem;
+        color: #ccc; /* Màu chữ nhạt hơn cho nội dung footer */
+    }
+
+        footer p a[b-4qb7c8qijx] {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+            footer p a:hover[b-4qb7c8qijx] {
+                text-decoration: underline;
+            }
+
+/* Adjust margin for body to avoid content being hidden behind fixed navbar */
+body[b-4qb7c8qijx] {
+    margin-top: 70px;
+}
+
+/* Jumbotron Customization (Banner lớn ở trang chủ) */
+.jumbotron[b-4qb7c8qijx] {
+    background-color: #e9ecef; /* Nền sáng */
+    padding: 4rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .jumbotron h1[b-4qb7c8qijx] {
+        font-size: 3rem;
+        color: #007bff; /* Màu xanh đậm cho tiêu đề chính */
+    }
+
+    .jumbotron p[b-4qb7c8qijx] {
+        font-size: 1.3rem;
+        color: #555; /* Màu chữ nhạt cho đoạn mô tả */
+    }
+
+/* Button Styles */
+.btn-primary[b-4qb7c8qijx] {
+    background-color: #007bff;
+    border-color: #007bff;
