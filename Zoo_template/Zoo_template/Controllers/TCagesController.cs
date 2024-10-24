@@ -47,7 +47,7 @@ namespace Zoo_template.Controllers
         // GET: TCages/Create
         public IActionResult Create()
         {
-            ViewData["AreaId"] = new SelectList(_context.TAreas, "AreaId", "AreaId");
+            ViewData["AreaId"] = new SelectList(_context.TAreas, "AreaId", "AreaName");
             return View();
         }
 
@@ -60,11 +60,12 @@ namespace Zoo_template.Controllers
         {
             if (ModelState.IsValid)
             {
+                tCage.CageId = (_context.TCages.Max(a => (int?)a.CageId) ?? 0) + 1;
                 _context.Add(tCage);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AreaId"] = new SelectList(_context.TAreas, "AreaId", "AreaId", tCage.AreaId);
+            ViewData["AreaId"] = new SelectList(_context.TAreas, "AreaId", "AreaName", tCage.AreaId);
             return View(tCage);
         }
 

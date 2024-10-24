@@ -8,7 +8,6 @@
 <h1>Details</h1>
 
 <div>
-    <h4>TAnimal</h4>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
@@ -63,13 +62,13 @@
             @Html.DisplayNameFor(model => model.Food)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Food.FoodId)
+            @Html.DisplayFor(model => model.Food.FoodName)
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Species)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Species.SpeciesId)
+            @Html.DisplayFor(model => model.Species.SpeciesName)
         </dd>
     </dl>
 </div>

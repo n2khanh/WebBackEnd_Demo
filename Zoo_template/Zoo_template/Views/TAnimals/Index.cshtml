@@ -5,11 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Animal in cage</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
@@ -71,20 +69,27 @@
                 @Html.DisplayFor(modelItem => item.Image)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Cage.CageId)
+                @Html.DisplayFor(modelItem => item.CageId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Food.FoodId)
+                @Html.DisplayFor(modelItem => item.Food.FoodName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Species.SpeciesId)
+                @Html.DisplayFor(modelItem => item.Species.SpeciesName)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.AnimalId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.AnimalId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AnimalId">Delete</a>
+                <a asp-action="Delete" asp-route-id="@item.AnimalId">Delete</a> 
+                    
             </td>
         </tr>
 }
     </tbody>
 </table>
+<p>
+    <a asp-action="Create" >Create New</a>
+</p>
+<p>
+    <a href="http://localhost:5249/TCages">Cage Information</a>
+</p>

@@ -19,9 +19,12 @@ namespace Zoo_template.Controllers
         }
 
         // GET: TAnimals
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? id)
+            
         {
-            var zooContext = _context.TAnimals.Include(t => t.Cage).Include(t => t.Food).Include(t => t.Species);
+ 
+            var zooContext = _context.TAnimals.Include(t =>  t.Cage).Include(t => t.Food).Include(t => t.Species).Where(t=> t.CageId == id);
+           
             return View(await zooContext.ToListAsync());
         }
 
@@ -46,12 +49,23 @@ namespace Zoo_template.Controllers
             return View(tAnimal);
         }
 
-        // GET: TAnimals/Create
         public IActionResult Create()
         {
-            ViewData["CageId"] = new SelectList(_context.TCages, "CageId", "CageId");
-            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodId");
-            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesId");
+            
+            // Lấy danh sách thức ăn với FoodId và FoodName
+            var foods = _context.TFoods.Select(f => new {
+                FoodId = f.FoodId,
+                FoodName = f.FoodName // Chắc chắn rằng cột này tồn tại
+            }).ToList();
+            ViewData["FoodId"] = new SelectList(foods, "FoodId", "FoodName");
+
+            // Lấy danh sách loài với SpeciesId và SpeciesName
+            var species = _context.TSpecies.Select(s => new {
+                SpeciesId = s.SpeciesId,
+                SpeciesName = s.SpeciesName // Chắc chắn rằng cột này tồn tại
+            }).ToList();
+            ViewData["SpeciesId"] = new SelectList(species, "SpeciesId", "SpeciesName");
+
             return View();
         }
 
@@ -60,11 +74,24 @@ namespace Zoo_template.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AnimalId,Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,CageId,Gender,Image,FoodId")] TAnimal tAnimal)
+        public async Task<IActionResult> Create([Bind("Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,CageId,Gender,Image,FoodId")] TAnimal tAnimal,int id)
         {
             if (ModelState.IsValid)
             {
+
+                tAnimal.AnimalId = (_context.TAnimals.Max(a => (int?)a.AnimalId) ?? 0) + 1;
+                tAnimal.CageId = id;
                 _context.Add(tAnimal);
+                var cage = _context.TCages.FirstOrDefault(c => c.CageId == tAnimal.CageId);
+
+                if (cage != null)
+                {
+                    // Tăng số lượng thú trong lồng
+                    cage.Quantity += 1;
+
+                    // Cập nhật lồng trong cơ sở dữ liệu
+                    _context.Update(cage);
+                }
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
@@ -88,8 +115,8 @@ namespace Zoo_template.Controllers
                 return NotFound();
             }
             ViewData["CageId"] = new SelectList(_context.TCages, "CageId", "CageId", tAnimal.CageId);
-            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodId", tAnimal.FoodId);
-            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesId", tAnimal.SpeciesId);
+            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodName", tAnimal.FoodId);
+            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesName", tAnimal.SpeciesId);
             return View(tAnimal);
         }
 
@@ -161,6 +188,16 @@ namespace Zoo_template.Controllers
             if (tAnimal != null)
             {
                 _context.TAnimals.Remove(tAnimal);
+                var cage = _context.TCages.FirstOrDefault(c => c.CageId == tAnimal.CageId);
+
+                if (cage != null)
+                {
+                    // Tăng số lượng thú trong lồng
+                    cage.Quantity -= 1;
+
+                    // Cập nhật lồng trong cơ sở dữ liệu
+                    _context.Update(cage);
+                }
             }
 
             await _context.SaveChangesAsync();

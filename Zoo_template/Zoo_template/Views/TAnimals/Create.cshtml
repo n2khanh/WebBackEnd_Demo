@@ -1,5 +1,6 @@
 ﻿@model Zoo_template.Models.TAnimal
 
+
 @{
     ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -13,11 +14,7 @@
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="AnimalId" class="control-label"></label>
-                <input asp-for="AnimalId" class="form-control" />
-                <span asp-validation-for="AnimalId" class="text-danger"></span>
-            </div>
+            <form asp-controller="TAnimals" asp-action="Create"   method="post" class="mt-3">
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
                 <input asp-for="Name" class="form-control" />
@@ -45,11 +42,8 @@
             </div>
             <div class="form-group">
                 <label asp-for="SpeciesId" class="control-label"></label>
-                <select asp-for="SpeciesId" class ="form-control" asp-items="ViewBag.SpeciesId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="CageId" class="control-label"></label>
-                <select asp-for="CageId" class ="form-control" asp-items="ViewBag.CageId"></select>
+                <select asp-for="SpeciesId" class="form-control" asp-items="ViewBag.SpeciesId"></select>
+                <span asp-validation-for="SpeciesId" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
@@ -68,6 +62,7 @@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
+            </form>
         </form>
     </div>
 </div>
