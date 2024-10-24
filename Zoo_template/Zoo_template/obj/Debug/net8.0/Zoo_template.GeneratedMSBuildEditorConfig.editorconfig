@@ -86,6 +86,26 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/User/Documents/GitHub/Web/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/GitHub/Web/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/GitHub/Web/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/GitHub/Web/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/User/Documents/GitHub/Web/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/User/Documents/GitHub/Web/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

@@ -4,6 +4,11 @@
       "type": "mssql",
       "connectionId": "ConnectionStrings:ZooContext",
       "dynamicId": null
+    },
+    "mssql2": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ZooContext1",
+      "dynamicId": null
     }
   }
 }

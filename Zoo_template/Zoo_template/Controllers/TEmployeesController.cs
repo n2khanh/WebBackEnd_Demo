@@ -1,0 +1,178 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using Zoo_template.Models;
+
+namespace Zoo_template.Controllers
+{
+    public class TEmployeesController : Controller
+    {
+        private readonly ZooContext _context;
+
+        public TEmployeesController(ZooContext context)
+        {
+            _context = context;
+        }
+
+        // GET: TEmployees
+        public async Task<IActionResult> Index()
+        {
+            var zooContext = _context.TEmployees.Include(t => t.ResAreaNavigation).Include(t => t.Shift);
+            return View(await zooContext.ToListAsync());
+        }
+
+        // GET: TEmployees/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var tEmployee = await _context.TEmployees
+                .Include(t => t.ResAreaNavigation)
+                .Include(t => t.Shift)
+                .FirstOrDefaultAsync(m => m.EmployeeId == id);
+            if (tEmployee == null)
+            {
+                return NotFound();
+            }
+
+            return View(tEmployee);
+        }
+
+        // GET: TEmployees/Create
+        public IActionResult Create()
+        {
+            var maxEmployeeId = _context.TEmployees.Max(e => e.EmployeeId);
+
+            // Tạo một đối tượng TEmployee mới với EmployeeId tự động tăng
+            var newEmployee = new TEmployee
+            {
+                EmployeeId = maxEmployeeId + 1
+            };
+
+            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaId");
+            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "ShiftId");
+            return View(newEmployee);
+        }
+
+
+        // POST: TEmployees/Create
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("EmployeeId,Name,Gender,PhoneNumber,Address,ResArea,ShiftId,OnWork")] TEmployee tEmployee)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(tEmployee);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaId", tEmployee.ResArea);
+            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "ShiftId", tEmployee.ShiftId);
+            return View(tEmployee);
+        }
+
+        // GET: TEmployees/Edit/5
+        public async Task<IActionResult> Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var tEmployee = await _context.TEmployees.FindAsync(id);
+            if (tEmployee == null)
+            {
+                return NotFound();
+            }
+            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaId", tEmployee.ResArea);
+            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "ShiftId", tEmployee.ShiftId);
+            return View(tEmployee);
+        }
+
+        // POST: TEmployees/Edit/5
+        // To protect from overposting attacks, enable the specific properties you want to bind to.
+        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, [Bind("EmployeeId,Name,Gender,PhoneNumber,Address,ResArea,ShiftId,OnWork")] TEmployee tEmployee)
+        {
+            if (id != tEmployee.EmployeeId)
+            {
+                return NotFound();
+            }
+
+            if (ModelState.IsValid)
+            {
+                try
+                {
+                    _context.Update(tEmployee);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!TEmployeeExists(tEmployee.EmployeeId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction(nameof(Index));
+            }
+            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaId", tEmployee.ResArea);
+            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "ShiftId", tEmployee.ShiftId);
+            return View(tEmployee);
+        }
+
+        // GET: TEmployees/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var tEmployee = await _context.TEmployees
+                .Include(t => t.ResAreaNavigation)
+                .Include(t => t.Shift)
+                .FirstOrDefaultAsync(m => m.EmployeeId == id);
+            if (tEmployee == null)
+            {
+                return NotFound();
+            }
+
+            return View(tEmployee);
+        }
+
+        // POST: TEmployees/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var tEmployee = await _context.TEmployees.FindAsync(id);
+            if (tEmployee != null)
+            {
+                _context.TEmployees.Remove(tEmployee);
+            }
+
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
+        private bool TEmployeeExists(int id)
+        {
+            return _context.TEmployees.Any(e => e.EmployeeId == id);
+        }
+    }
+}

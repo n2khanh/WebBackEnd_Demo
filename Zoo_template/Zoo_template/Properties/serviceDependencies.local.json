@@ -6,6 +6,13 @@
       "type": "mssql.onprem",
       "connectionId": "ConnectionStrings:ZooContext",
       "dynamicId": null
+    },
+    "mssql2": {
+      "serviceConnectorResourceId": "",
+      "secretStore": "LocalSecretsFile",
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:ZooContext1",
+      "dynamicId": null
     }
   }
 }
