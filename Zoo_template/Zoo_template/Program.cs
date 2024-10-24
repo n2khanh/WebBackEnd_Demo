@@ -1,7 +1,12 @@
-var builder = WebApplication.CreateBuilder(args);
+using Microsoft.EntityFrameworkCore;
+using System.Configuration;
+using Zoo_template.Models;
 
+var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddDbContext<ZooContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext")));
 
 var app = builder.Build();
 
@@ -21,3 +26,4 @@ app.MapControllerRoute(
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
+

@@ -3,7 +3,9 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
     color: #333;
-    
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
 }
 
 /* Navbar */
@@ -12,7 +14,8 @@ nav ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background: linear-gradient(90deg, #333, #555);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
     nav ul li {
@@ -23,45 +26,68 @@ nav ul {
             display: block;
             color: white;
             text-align: center;
-            padding: 14px 16px;
+            padding: 14px 20px;
             text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
+
+            /* Hover hiệu ứng cho link */
+            nav ul li a:hover {
+                background-color: #007bff;
+                color: white;
+                border-radius: 5px;
+            }
 
 .Hello {
     float: right;
 }
 
-
-.nav-link.active, .nav-link:hover {
-     color: #007bff !important; /* Làm nổi bật link được chọn */
-     background-color: #212529;
-     border-radius: 5px;
+.nav-link.active {
+    color: #007bff !important; /* Làm nổi bật link được chọn */
+    background-color: #212529;
+    border-radius: 5px;
 }
 
 /* Jumbotron (Banner lớn ở trang chủ) */
 .jumbotron {
-    background-color: #e9ecef;
+    background-color: #ffffff;
     padding: 3rem 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
 }
 
+    .jumbotron:hover {
+        transform: scale(1.02);
+    }
+
     .jumbotron h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
         color: #007bff;
+        margin-bottom: 20px;
     }
 
     .jumbotron p {
-        font-size: 1.2rem;
-        color: #555;
+        font-size: 1.3rem;
+        color: #666;
     }
 
 .btn-lg {
     margin: 10px;
     padding: 15px 30px;
     font-size: 1.2rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
 }
+
+    .btn-lg:hover {
+        background-color: #0056b3;
+    }
 
 /* Footer */
 footer {
@@ -72,6 +98,7 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
 }
 
     footer p {
@@ -81,12 +108,26 @@ footer {
 
 /* Tạo khoảng cách giữa các phần */
 .container {
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 
 /* Responsive */
 @media (max-width: 576px) {
     .jumbotron h1 {
         font-size: 2rem;
+    }
+
+    nav ul li {
+        float: none;
+    }
+
+        nav ul li a {
+            padding: 10px 15px;
+            font-size: 1rem;
+        }
+
+    footer {
+        position: static;
+        padding: 10px 0;
     }
 }

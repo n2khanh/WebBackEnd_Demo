@@ -1,11 +1,19 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Zoo_template
 build_property.RootNamespace = Zoo_template
@@ -36,6 +44,46 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/HP/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/_ViewImports.cshtml]
