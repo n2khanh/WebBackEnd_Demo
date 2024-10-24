@@ -56,10 +56,10 @@
                 @Html.DisplayFor(modelItem => item.OnWork)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ResAreaNavigation.AreaId)
+                @Html.DisplayFor(modelItem => item.ResAreaNavigation.AreaName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Shift.ShiftId)
+                @Html.DisplayFor(modelItem => item.Shift.Name)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |

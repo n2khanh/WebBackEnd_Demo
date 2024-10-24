@@ -56,8 +56,8 @@ namespace Zoo_template.Controllers
                 EmployeeId = maxEmployeeId + 1
             };
 
-            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaId");
-            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "ShiftId");
+            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaName", newEmployee.ResArea);
+            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "Name",newEmployee.ShiftId);
             return View(newEmployee);
         }
 
@@ -75,8 +75,8 @@ namespace Zoo_template.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaId", tEmployee.ResArea);
-            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "ShiftId", tEmployee.ShiftId);
+            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaName", tEmployee.ResArea);
+            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "Name", tEmployee.ShiftId);
             return View(tEmployee);
         }
 
@@ -93,8 +93,8 @@ namespace Zoo_template.Controllers
             {
                 return NotFound();
             }
-            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaId", tEmployee.ResArea);
-            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "ShiftId", tEmployee.ShiftId);
+            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaName", tEmployee.ResArea);
+            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "Name", tEmployee.ShiftId);
             return View(tEmployee);
         }
 
@@ -130,8 +130,8 @@ namespace Zoo_template.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaId", tEmployee.ResArea);
-            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "ShiftId", tEmployee.ShiftId);
+            ViewData["ResArea"] = new SelectList(_context.TAreas, "AreaId", "AreaName", tEmployee.ResArea);
+            ViewData["ShiftId"] = new SelectList(_context.TShifts, "ShiftId", "Name", tEmployee.ShiftId);
             return View(tEmployee);
         }
 

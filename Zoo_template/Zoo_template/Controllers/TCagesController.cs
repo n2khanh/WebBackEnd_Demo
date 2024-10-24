@@ -82,7 +82,7 @@ namespace Zoo_template.Controllers
             {
                 return NotFound();
             }
-            ViewData["AreaId"] = new SelectList(_context.TAreas, "AreaId", "AreaId", tCage.AreaId);
+            ViewData["AreaId"] = new SelectList(_context.TAreas, "AreaId", "AreaName", tCage.AreaId);
             return View(tCage);
         }
 

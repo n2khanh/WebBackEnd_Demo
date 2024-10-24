@@ -6,7 +6,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ZooContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext1")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext")));
 
 var app = builder.Build();
 
