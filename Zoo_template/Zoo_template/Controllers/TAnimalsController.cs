@@ -12,6 +12,7 @@ namespace Zoo_template.Controllers
     public class TAnimalsController : Controller
     {
         private readonly ZooContext _context;
+       
 
         public TAnimalsController(ZooContext context)
         {
@@ -24,6 +25,7 @@ namespace Zoo_template.Controllers
         {
  
             var zooContext = _context.TAnimals.Include(t =>  t.Cage).Include(t => t.Food).Include(t => t.Species).Where(t=> t.CageId == id);
+            TempData["CageID"] = id;
            
             return View(await zooContext.ToListAsync());
         }
@@ -74,16 +76,16 @@ namespace Zoo_template.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,CageId,Gender,Image,FoodId")] TAnimal tAnimal,int id)
+        public async Task<IActionResult> Create([Bind("Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,Gender,Image,FoodId")] TAnimal tAnimal)
         {
             if (ModelState.IsValid)
             {
 
                 tAnimal.AnimalId = (_context.TAnimals.Max(a => (int?)a.AnimalId) ?? 0) + 1;
-                tAnimal.CageId = id;
+                tAnimal.CageId = (int?)TempData["CageID"];
+                //tAnimal.CageId = id;
                 _context.Add(tAnimal);
                 var cage = _context.TCages.FirstOrDefault(c => c.CageId == tAnimal.CageId);
-
                 if (cage != null)
                 {
                     // Tăng số lượng thú trong lồng
@@ -93,13 +95,13 @@ namespace Zoo_template.Controllers
                     _context.Update(cage);
                 }
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { id = tAnimal.CageId });
             }
-            ViewData["CageId"] = new SelectList(_context.TCages, "CageId", "CageId", tAnimal.CageId);
             ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodId", tAnimal.FoodId);
             ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesId", tAnimal.SpeciesId);
             return View(tAnimal);
         }
+
 
         // GET: TAnimals/Edit/5
         public async Task<IActionResult> Edit(int? id)

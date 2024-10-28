@@ -61,6 +61,7 @@ namespace Zoo_template.Controllers
             if (ModelState.IsValid)
             {
                 tCage.CageId = (_context.TCages.Max(a => (int?)a.CageId) ?? 0) + 1;
+                tCage.Quantity = 0;
                 _context.Add(tCage);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
