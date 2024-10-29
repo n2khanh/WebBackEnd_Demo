@@ -29,8 +29,10 @@ public partial class ZooContext : DbContext
 
     public virtual DbSet<TSpecy> TSpecies { get; set; }
 
+    public virtual DbSet<TLogin> TLogin { get; set; }
+
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=QLVuonThu_Web;User ID=sa;Password=123456;Trust Server Certificate=True");
+       => optionsBuilder.UseSqlServer("Data Source=DESKTOP-A3NO6EJ\\SQLEXPRESS;Initial Catalog=QLVuonThu_Web1;User ID=sa;Password=123456789;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -94,6 +96,14 @@ public partial class ZooContext : DbContext
 
             entity.Property(e => e.SpeciesId).ValueGeneratedNever();
         });
+
+        modelBuilder.Entity<TLogin>(entity =>
+        {
+            entity.HasKey(e => e.UserName).HasName("PK_TLogin");
+            entity.Property(e => e.UserName).ValueGeneratedNever();
+        });
+
+
 
         OnModelCreatingPartial(modelBuilder);
     }
