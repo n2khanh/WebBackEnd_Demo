@@ -42,16 +42,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Home/Login.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Home/Register.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxSZWdpc3Rlci5jc2h0bWw=
+[C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Log/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nXExvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Log/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/Error.cshtml]

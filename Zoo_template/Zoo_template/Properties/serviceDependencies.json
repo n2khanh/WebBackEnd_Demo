@@ -5,11 +5,6 @@
       "connectionId": "ConnectionStrings:ZooContext",
       "dynamicId": null
     },
-    "mssql2": {
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:ZooContext1",
-      "dynamicId": null
-    },
     "mssql3": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:ZooContext2",
