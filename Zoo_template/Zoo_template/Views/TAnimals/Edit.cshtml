@@ -45,18 +45,14 @@
                 <span asp-validation-for="SpeciesId" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="CageId" class="control-label"></label>
-                <select asp-for="CageId" class="form-control" asp-items="ViewBag.CageId"></select>
-                <span asp-validation-for="CageId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
                 <label asp-for="Gender" class="control-label"></label>
                 <input asp-for="Gender" class="form-control" />
                 <span asp-validation-for="Gender" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Image" class="control-label"></label>
-                <input asp-for="Image" class="form-control" />
+                <label asp-for="Image" class="control-label">Image</label>
+                <input type="file" id="imageFile" class="form-control" />
+                <input type="hidden" asp-for="Image" id="imageName" /> <!-- Hidden input to store the image name -->
                 <span asp-validation-for="Image" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -72,7 +68,32 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" asp-route-id="@Model.CageId">Back to List</a>
 </div>
+@section Scripts {
+    <script>
+        document.getElementById("imageFile").addEventListener("change", async function () {
+            var file = this.files[0];
+            if (file) {
+                var formData = new FormData();
+                formData.append("file", file);
+
+                // Call the UploadFile endpoint
+                const response = await fetch('@Url.Action("UploadFile", "TAnimals")', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                if (result.success) {
+                    document.getElementById("imageName").value = result.fileName; // Set the hidden input value
+                    alert("File uploaded successfully!");
+                } else {
+                    alert("File upload failed. Please try again.");
+                }
+            }
+        });
+    </script>
+}
 
 

@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Zoo_template.Interfaces;
 using Zoo_template.Models;
+using Zoo_template.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,7 +15,9 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddDbContext<ZooContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext2")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext")));
+
+builder.Services.AddTransient<IBufferedFileUploadService, BufferedFileUploadLocalService>();
 
 var app = builder.Build();
 

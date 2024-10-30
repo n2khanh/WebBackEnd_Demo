@@ -32,7 +32,7 @@ public partial class ZooContext : DbContext
     public virtual DbSet<TLogin> TLogin { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseSqlServer("Data Source=DESKTOP-A3NO6EJ\\SQLEXPRESS;Initial Catalog=QLVuonThu_Web1;User ID=sa;Password=123456789;Trust Server Certificate=True");
+       => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=QLVuonThu_Web;User ID=sa;Password=123456;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

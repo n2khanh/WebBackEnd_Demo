@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Zoo_template.Interfaces;
 using Zoo_template.Models;
 
 namespace Zoo_template.Controllers
@@ -12,21 +15,25 @@ namespace Zoo_template.Controllers
     public class TAnimalsController : Controller
     {
         private readonly ZooContext _context;
-       
+        private readonly IBufferedFileUploadService _bufferedFileUploadService;
+
 
         public TAnimalsController(ZooContext context)
         {
             _context = context;
+            
         }
 
         // GET: TAnimals
         public async Task<IActionResult> Index(int? id)
-            
         {
- 
-            var zooContext = _context.TAnimals.Include(t =>  t.Cage).Include(t => t.Food).Include(t => t.Species).Where(t=> t.CageId == id);
+            var zooContext = _context.TAnimals
+                .Include(t => t.Cage)
+                .Include(t => t.Food)
+                .Include(t => t.Species)
+                .Where(t => t.CageId == id);
+
             TempData["CageID"] = id;
-           
             return View(await zooContext.ToListAsync());
         }
 
@@ -34,129 +41,94 @@ namespace Zoo_template.Controllers
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var tAnimal = await _context.TAnimals
                 .Include(t => t.Cage)
                 .Include(t => t.Food)
                 .Include(t => t.Species)
                 .FirstOrDefaultAsync(m => m.AnimalId == id);
+
             if (tAnimal == null)
-            {
                 return NotFound();
-            }
 
             return View(tAnimal);
         }
 
         public IActionResult Create()
         {
-            
-            // Lấy danh sách thức ăn với FoodId và FoodName
-            var foods = _context.TFoods.Select(f => new {
-                FoodId = f.FoodId,
-                FoodName = f.FoodName // Chắc chắn rằng cột này tồn tại
-            }).ToList();
-            ViewData["FoodId"] = new SelectList(foods, "FoodId", "FoodName");
-
-            // Lấy danh sách loài với SpeciesId và SpeciesName
-            var species = _context.TSpecies.Select(s => new {
-                SpeciesId = s.SpeciesId,
-                SpeciesName = s.SpeciesName // Chắc chắn rằng cột này tồn tại
-            }).ToList();
-            ViewData["SpeciesId"] = new SelectList(species, "SpeciesId", "SpeciesName");
-
-            return View();
+            // Ensure the model is not null
+            var model = new TAnimal();
+            PopulateViewData(model);
+            return View(model);
         }
 
         // POST: TAnimals/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,Gender,Image,FoodId")] TAnimal tAnimal)
         {
             if (ModelState.IsValid)
             {
-
-                tAnimal.AnimalId = (_context.TAnimals.Max(a => (int?)a.AnimalId) ?? 0) + 1;
+                // Auto-generate AnimalId (consider using database auto-increment instead)
                 tAnimal.CageId = (int?)TempData["CageID"];
-                //tAnimal.CageId = id;
                 _context.Add(tAnimal);
-                var cage = _context.TCages.FirstOrDefault(c => c.CageId == tAnimal.CageId);
+
+                var cage = await _context.TCages.FindAsync(tAnimal.CageId);
                 if (cage != null)
                 {
-                    // Tăng số lượng thú trong lồng
                     cage.Quantity += 1;
-
-                    // Cập nhật lồng trong cơ sở dữ liệu
                     _context.Update(cage);
                 }
+
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index), new { id = tAnimal.CageId });
             }
-            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodId", tAnimal.FoodId);
-            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesId", tAnimal.SpeciesId);
+
+            PopulateViewData(tAnimal);
             return View(tAnimal);
         }
-
 
         // GET: TAnimals/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var tAnimal = await _context.TAnimals.FindAsync(id);
             if (tAnimal == null)
-            {
                 return NotFound();
-            }
-            ViewData["CageId"] = new SelectList(_context.TCages, "CageId", "CageId", tAnimal.CageId);
-            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodName", tAnimal.FoodId);
-            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesName", tAnimal.SpeciesId);
+
+            PopulateViewData(tAnimal);
             return View(tAnimal);
         }
 
         // POST: TAnimals/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("AnimalId,Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,CageId,Gender,Image,FoodId")] TAnimal tAnimal)
         {
             if (id != tAnimal.AnimalId)
-            {
                 return NotFound();
-            }
 
             if (ModelState.IsValid)
             {
                 try
                 {
+                    tAnimal.CageId = (int?)TempData["CageID"];
                     _context.Update(tAnimal);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
                     if (!TAnimalExists(tAnimal.AnimalId))
-                    {
                         return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    throw;
                 }
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction(nameof(Index), new { id = tAnimal.CageId });
             }
-            ViewData["CageId"] = new SelectList(_context.TCages, "CageId", "CageId", tAnimal.CageId);
-            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodId", tAnimal.FoodId);
-            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesId", tAnimal.SpeciesId);
+
+            PopulateViewData(tAnimal);
             return View(tAnimal);
         }
 
@@ -164,19 +136,16 @@ namespace Zoo_template.Controllers
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
-            {
                 return NotFound();
-            }
 
             var tAnimal = await _context.TAnimals
                 .Include(t => t.Cage)
                 .Include(t => t.Food)
                 .Include(t => t.Species)
                 .FirstOrDefaultAsync(m => m.AnimalId == id);
+
             if (tAnimal == null)
-            {
                 return NotFound();
-            }
 
             return View(tAnimal);
         }
@@ -190,25 +159,62 @@ namespace Zoo_template.Controllers
             if (tAnimal != null)
             {
                 _context.TAnimals.Remove(tAnimal);
-                var cage = _context.TCages.FirstOrDefault(c => c.CageId == tAnimal.CageId);
+                var cage = await _context.TCages.FirstOrDefaultAsync(c => c.CageId == tAnimal.CageId);
 
                 if (cage != null)
                 {
-                    // Tăng số lượng thú trong lồng
                     cage.Quantity -= 1;
-
-                    // Cập nhật lồng trong cơ sở dữ liệu
                     _context.Update(cage);
                 }
+
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Index), new { id = tAnimal.CageId });
         }
 
         private bool TAnimalExists(int id)
         {
             return _context.TAnimals.Any(e => e.AnimalId == id);
+        }
+
+        // File upload
+        [HttpPost]
+        public async Task<IActionResult> UploadFile(IFormFile file)
+        {
+            if (file == null || file.Length == 0)
+                return Json(new { success = false, message = "No file uploaded." });
+
+            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+            var fileExtension = Path.GetExtension(file.FileName).ToLower();
+
+            if (!allowedExtensions.Contains(fileExtension))
+                return Json(new { success = false, message = "Invalid file type." });
+
+            var fileName = Path.GetFileName(file.FileName);
+            var filePath = Path.Combine("wwwroot/images", fileName);
+
+            Directory.CreateDirectory(Path.GetDirectoryName(filePath));
+
+            try
+            {
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await file.CopyToAsync(stream);
+                }
+                return Json(new { success = true, fileName });
+            }
+            catch (Exception ex)
+            {
+                // Log the exception
+                return Json(new { success = false, message = "File upload failed: " + ex.Message });
+            }
+        }
+
+        private void PopulateViewData(TAnimal tAnimal = null)
+        {
+            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodName", tAnimal?.FoodId);
+            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesName", tAnimal?.SpeciesId);
         }
     }
 }
