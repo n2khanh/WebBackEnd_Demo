@@ -1,24 +1,24 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\css\\Index.css",
+      "PackagePath": "staticwebassets\\css\\Index.css"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\css\\OrderCustomer.css",
+      "PackagePath": "staticwebassets\\css\\OrderCustomer.css"
+    },
+    {
       "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\css\\themify-icons.css",
+      "PackagePath": "staticwebassets\\css\\themify-icons.css"
+    },
+    {
       "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
-    },
-    {
-      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\image\\Tiger.jpg",
-      "PackagePath": "staticwebassets\\image\\Tiger.jpg"
-    },
-    {
-      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\image\\Tiger.png!w700wp",
-      "PackagePath": "staticwebassets\\image\\Tiger.png!w700wp"
-    },
-    {
-      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\image\\WhiteTiger.jpg",
-      "PackagePath": "staticwebassets\\image\\WhiteTiger.jpg"
     },
     {
       "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Tiger.jpg",
@@ -29,8 +29,8 @@
       "PackagePath": "staticwebassets\\images\\WhiteTiger.jpg"
     },
     {
-      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\b-tree-example.jpg",
-      "PackagePath": "staticwebassets\\images\\b-tree-example.jpg"
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\js\\OrderCustomer.js",
+      "PackagePath": "staticwebassets\\js\\OrderCustomer.js"
     },
     {
       "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\js\\site.js",

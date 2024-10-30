@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Zoo_template.Interfaces;
 using Zoo_template.Models;
 
 namespace Zoo_template.Controllers
@@ -15,7 +14,7 @@ namespace Zoo_template.Controllers
     public class TAnimalsController : Controller
     {
         private readonly ZooContext _context;
-        private readonly IBufferedFileUploadService _bufferedFileUploadService;
+      
 
 
         public TAnimalsController(ZooContext context)

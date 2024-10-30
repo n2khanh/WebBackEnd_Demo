@@ -3,8 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\controllers\\tanimalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\controllers\\tanimalscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\models\\zoocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\models\\zoocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\views\\tanimals\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\views\\tanimals\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\views\\tanimals\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\views\\tanimals\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\models\\tanimal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -15,24 +31,12 @@
       "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\views\\tanimals\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\views\\tanimals\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\views\\tanimals\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\views\\tanimals\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\views\\tanimals\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\views\\tanimals\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\views\\tanimals\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\views\\tanimals\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\views\\tanimals\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\services\\bufferedfileuploadlocalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\services\\bufferedfileuploadlocalservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\controllers\\tcagescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,20 +51,8 @@
       "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\interfaces\\ibufferedfileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\interfaces\\ibufferedfileuploadservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\models\\tcage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\models\\tcage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\models\\zoocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|solutionrelative:zoo_template\\models\\zoocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FEBB6775-4A25-4235-9760-7ED753B68617}|Zoo_template\\Zoo_template.csproj|c:\\users\\khanh\\documents\\github\\webbackend_demo\\zoo_template\\zoo_template\\views\\home\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -106,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -122,59 +114,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TAnimalsController.cs",
-              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Controllers\\TAnimalsController.cs",
-              "RelativeDocumentMoniker": "Zoo_template\\Controllers\\TAnimalsController.cs",
-              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Controllers\\TAnimalsController.cs*",
-              "RelativeToolTip": "Zoo_template\\Controllers\\TAnimalsController.cs*",
-              "ViewState": "AgIAAFwAAAAAAAAAAAA9wHUAAAA+AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T16:31:02.889Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Index.cshtml",
-              "RelativeDocumentMoniker": "Zoo_template\\Views\\TAnimals\\Index.cshtml",
-              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Index.cshtml",
-              "RelativeToolTip": "Zoo_template\\Views\\TAnimals\\Index.cshtml",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEYAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-28T16:02:57.586Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 3,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Edit.cshtml",
               "RelativeDocumentMoniker": "Zoo_template\\Views\\TAnimals\\Edit.cshtml",
               "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Edit.cshtml",
               "RelativeToolTip": "Zoo_template\\Views\\TAnimals\\Edit.cshtml",
-              "ViewState": "AgIAABkAAAAAAAAAAAAiwC4AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAiwC0AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-10-29T16:16:07.611Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Create.cshtml",
-              "RelativeDocumentMoniker": "Zoo_template\\Views\\TAnimals\\Create.cshtml",
-              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Create.cshtml",
-              "RelativeToolTip": "Zoo_template\\Views\\TAnimals\\Create.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T16:33:09.146Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "Delete.cshtml",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Delete.cshtml",
               "RelativeDocumentMoniker": "Zoo_template\\Views\\TAnimals\\Delete.cshtml",
@@ -182,12 +135,11 @@
               "RelativeToolTip": "Zoo_template\\Views\\TAnimals\\Delete.cshtml",
               "ViewState": "AgIAADYAAAAAAAAAAAAAAE8AAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T16:41:05.72Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T16:41:05.72Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Details.cshtml",
               "RelativeDocumentMoniker": "Zoo_template\\Views\\TAnimals\\Details.cshtml",
@@ -195,12 +147,11 @@
               "RelativeToolTip": "Zoo_template\\Views\\TAnimals\\Details.cshtml",
               "ViewState": "AgIAACQAAAAAAAAAAAAAADYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T16:17:34.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T16:17:34.737Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "TAnimal.cs",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\TAnimal.cs",
               "RelativeDocumentMoniker": "Zoo_template\\Models\\TAnimal.cs",
@@ -208,25 +159,74 @@
               "RelativeToolTip": "Zoo_template\\Models\\TAnimal.cs",
               "ViewState": "AgIAABIAAAAAAAAAAAAYwBUAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T01:32:46.884Z",
+              "WhenOpened": "2024-10-30T01:32:46.884Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ZooContext.cs",
+              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\ZooContext.cs",
+              "RelativeDocumentMoniker": "Zoo_template\\Models\\ZooContext.cs",
+              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\ZooContext.cs",
+              "RelativeToolTip": "Zoo_template\\Models\\ZooContext.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAiwB4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T00:39:58.045Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TAnimalsController.cs",
+              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Controllers\\TAnimalsController.cs",
+              "RelativeDocumentMoniker": "Zoo_template\\Controllers\\TAnimalsController.cs",
+              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Controllers\\TAnimalsController.cs",
+              "RelativeToolTip": "Zoo_template\\Controllers\\TAnimalsController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T16:31:02.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Program.cs",
+              "RelativeDocumentMoniker": "Zoo_template\\Program.cs",
+              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Program.cs",
+              "RelativeToolTip": "Zoo_template\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T15:34:38.558Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Create.cshtml",
+              "RelativeDocumentMoniker": "Zoo_template\\Views\\TAnimals\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Create.cshtml",
+              "RelativeToolTip": "Zoo_template\\Views\\TAnimals\\Create.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAEsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T16:33:09.146Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "BufferedFileUploadLocalService.cs",
-              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Services\\BufferedFileUploadLocalService.cs",
-              "RelativeDocumentMoniker": "Zoo_template\\Services\\BufferedFileUploadLocalService.cs",
-              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Services\\BufferedFileUploadLocalService.cs",
-              "RelativeToolTip": "Zoo_template\\Services\\BufferedFileUploadLocalService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwAYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T00:58:15.885Z",
-              "EditorCaption": ""
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Index.cshtml",
+              "RelativeDocumentMoniker": "Zoo_template\\Views\\TAnimals\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TAnimals\\Index.cshtml",
+              "RelativeToolTip": "Zoo_template\\Views\\TAnimals\\Index.cshtml",
+              "ViewState": "AgIAADMAAAAAAAAAAAAAAEYAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T16:02:57.586Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "TCagesController.cs",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Controllers\\TCagesController.cs",
               "RelativeDocumentMoniker": "Zoo_template\\Controllers\\TCagesController.cs",
@@ -234,12 +234,11 @@
               "RelativeToolTip": "Zoo_template\\Controllers\\TCagesController.cs",
               "ViewState": "AgIAAFkAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T16:34:42.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T16:34:42.43Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Zoo_template\\Controllers\\HomeController.cs",
@@ -247,12 +246,11 @@
               "RelativeToolTip": "Zoo_template\\Controllers\\HomeController.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAowFkAAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T00:42:17.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T00:42:17.53Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Zoo_template\\Views\\Shared\\_Layout.cshtml",
@@ -260,25 +258,11 @@
               "RelativeToolTip": "Zoo_template\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T02:25:13.613Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T02:25:13.613Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "IBufferedFileUploadService.cs",
-              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Interfaces\\IBufferedFileUploadService.cs",
-              "RelativeDocumentMoniker": "Zoo_template\\Interfaces\\IBufferedFileUploadService.cs",
-              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Interfaces\\IBufferedFileUploadService.cs",
-              "RelativeToolTip": "Zoo_template\\Interfaces\\IBufferedFileUploadService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T00:57:50.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 12,
               "Title": "TCage.cs",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\TCage.cs",
               "RelativeDocumentMoniker": "Zoo_template\\Models\\TCage.cs",
@@ -290,20 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Program.cs",
-              "RelativeDocumentMoniker": "Zoo_template\\Program.cs",
-              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Program.cs",
-              "RelativeToolTip": "Zoo_template\\Program.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T15:34:38.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 18,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\appsettings.json",
               "RelativeDocumentMoniker": "Zoo_template\\appsettings.json",
@@ -315,7 +286,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 16,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\Home\\Login.cshtml",
               "RelativeDocumentMoniker": "Zoo_template\\Views\\Home\\Login.cshtml",
@@ -327,7 +298,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 20,
               "Title": "TEmployee.cs",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\TEmployee.cs",
               "RelativeDocumentMoniker": "Zoo_template\\Models\\TEmployee.cs",
@@ -339,19 +310,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ZooContext.cs",
-              "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\ZooContext.cs",
-              "RelativeDocumentMoniker": "Zoo_template\\Models\\ZooContext.cs",
-              "ToolTip": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\ZooContext.cs",
-              "RelativeToolTip": "Zoo_template\\Models\\ZooContext.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAkwB4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T00:39:58.045Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 13,
               "Title": "Register.cshtml",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\Home\\Register.cshtml",
               "RelativeDocumentMoniker": "Zoo_template\\Views\\Home\\Register.cshtml",
@@ -363,7 +322,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 19,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Zoo_template\\appsettings.Development.json",
@@ -375,7 +334,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 17,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Zoo_template\\Views\\Home\\Index.cshtml",
@@ -387,7 +346,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 14,
               "Title": "RegisterViewModel.cs",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\RegisterViewModel.cs",
               "RelativeDocumentMoniker": "Zoo_template\\Models\\RegisterViewModel.cs",
@@ -399,7 +358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 15,
               "Title": "TLogin.cs",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Models\\TLogin.cs",
               "RelativeDocumentMoniker": "Zoo_template\\Models\\TLogin.cs",
@@ -411,7 +370,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 21,
               "Title": "Create.cshtml",
               "DocumentMoniker": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\Views\\TCages\\Create.cshtml",
               "RelativeDocumentMoniker": "Zoo_template\\Views\\TCages\\Create.cshtml",

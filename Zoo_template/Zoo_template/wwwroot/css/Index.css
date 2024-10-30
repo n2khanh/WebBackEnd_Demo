@@ -1,0 +1,197 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#header {
+    height: 60px;
+    background-color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+
+    #header img {
+        width: 100px; /* Đặt kích thước ảnh tùy ý */
+        height: auto;
+        gap: 15px;
+    }
+
+.nav {
+    gap: 20px;
+    list-style-type: none;
+    display: flex;
+}
+
+    .nav li {
+        display: inline-block;
+    }
+
+        .nav li a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: chartreuse;
+            line-height: 40px;
+            padding: 0 10px;
+            transition: background-color 0.3s;
+        }
+
+    .nav > li:hover > a {
+        background-color: black;
+        color: white; /* Đổi màu chữ khi hover để dễ nhìn */
+        border-radius: 5px;
+    }
+
+#header button {
+    background-color: green;
+    padding: 0 24px;
+    height: 40px;
+    border-style: none;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+    #header button:hover {
+        background-color: #45a049;
+    }
+/* Định dạng cho phần nội dung chính */
+#content, #content1 {
+    background-color: #f9f9f9; /* Màu nền nhẹ */
+    border-radius: 8px; /* Bo tròn các góc */
+    padding: 20px; /* Khoảng cách bên trong */
+    margin: 20px 0; /* Khoảng cách bên ngoài */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+}
+
+    /* Định dạng cho tiêu đề h1 */
+    #content h1, #content1 h1 {
+        font-size: 24px; /* Kích thước chữ */
+        color: #333; /* Màu chữ */
+        margin-bottom: 15px; /* Khoảng cách dưới tiêu đề */
+    }
+
+    /* Định dạng cho đoạn văn bản */
+    #content p, #content1 p {
+        font-size: 16px; /* Kích thước chữ */
+        line-height: 1.6; /* Khoảng cách giữa các dòng */
+        color: #555; /* Màu chữ */
+        margin-bottom: 15px; /* Khoảng cách dưới đoạn văn */
+    }
+
+    /* Định dạng cho hình ảnh */
+    #content img, #content1 img {
+        max-width: 100%; /* Đảm bảo hình ảnh không vượt quá chiều rộng của khối */
+        height: auto; /* Tự động điều chỉnh chiều cao */
+        margin-top: 15px; /* Khoảng cách trên hình ảnh */
+        border-radius: 8px; /* Bo tròn các góc hình ảnh */
+    }
+
+/* Định dạng cho các nút và liên kết */
+.nav a {
+    text-decoration: none; /* Bỏ gạch chân */
+    color: #007bff; /* Màu chữ cho liên kết */
+    transition: color 0.3s; /* Hiệu ứng chuyển màu */
+}
+
+    .nav a:hover {
+        color: #0056b3; /* Màu chữ khi di chuột qua */
+    }
+
+/* Định dạng cho nút "Đặt vé ngay" */
+button {
+    background-color: #28a745; /* Màu nền nút */
+    color: white; /* Màu chữ */
+    border: none; /* Bỏ viền */
+    padding: 10px 20px; /* Khoảng cách bên trong */
+    border-radius: 5px; /* Bo tròn các góc */
+    cursor: pointer; /* Hiệu ứng con trỏ */
+    transition: background-color 0.3s; /* Hiệu ứng chuyển màu nền */
+}
+
+    button:hover {
+        background-color: #218838; /* Màu nền khi di chuột qua */
+    }
+.button-style {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Add some padding */
+    text-align: center; /* Center-align text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make it inline-block */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 5px; /* Rounded corners */
+    font-weight: bold; /* Make text bold */
+}
+
+    .button-style:hover {
+        background-color: #45a049; /* Darker green on hover */
+    }
+.contact-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.contact-info {
+    max-width: 50%;
+}
+
+    .contact-info h2 {
+        font-size: 28px;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .contact-info p {
+        font-size: 18px;
+        color: #333;
+        margin: 10px 0;
+        display: flex;
+        align-items: center;
+    }
+
+        .contact-info p i {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+    .contact-info h3 {
+        font-size: 20px;
+        margin-top: 30px;
+        color: #333;
+    }
+
+.social-icons {
+    font-size: 24px;
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+    .social-icons a {
+        width: 40px;
+        height: 40px;
+        color: rgba(0, 0, 0, 0.6);
+        text-decoration: none; /*trang trí văn bản */
+    }
+
+.map-section iframe {
+    border-radius: 10px;
+    border: none;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+}
