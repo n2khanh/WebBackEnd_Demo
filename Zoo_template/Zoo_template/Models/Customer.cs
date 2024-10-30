@@ -44,6 +44,10 @@ namespace Zoo_template.Models
         public DateTime? Date {  get; set; }
         [Required]
         public Gender? Gender { get; set; }
+        [Required]
+        public PayMethod? PayMethod { get; set; }
+        [Required]
+        public TypeTicket? typeofTicket { get; set; }
 
     }
 }

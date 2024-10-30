@@ -1,8 +1,25 @@
-﻿@{
-    ViewData["Title"] ="Trang chủ";
-    Layout = "~/Views/Shared/LayoutCustomer.cshtml";
-}
-        <div id="content" class="container">
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/Index.css">
+    <link rel="stylesheet" href="~/css/site.css">
+    <link rel="stylesheet" href="~/css/themify-icons.css">
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <img src="#">
+            <ul class="nav">
+                <li><a href=" #">Home</a></li>
+                <li><a href=" #">Giới thiệu</a></li>
+                <li><a href=" #">Tin tức</a></li>
+                <li><a href=" #">Liên hệ</a></li>
+            </ul>
+            <a class="btn btn-primary button-style" asp-action="Order" type="submit">Đặt vé ngay </a>
+        </div>
+        <div id="content">
             <h1>
                 Tổng quan về sở thú
             </h1>
@@ -43,3 +60,9 @@
 
             </div>
         </div>
+    </div>
+    <div class="container mt-4">
+        @RenderBody()
+    </div>
+</body>
+</html>

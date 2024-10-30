@@ -11,7 +11,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 10px;
+  padding: 0 500px;
   min-height: 100vh;
   background: #1BB295;
 }
@@ -106,10 +106,4 @@ form .password i {
 .submit-btn input:hover {
   background: #179b81;
 }
-.footer {
-    display: none; /* Ẩn phần footer */
-}
 
-#left-column {
-    display: none; /* Ẩn phần bên trái */
-}
