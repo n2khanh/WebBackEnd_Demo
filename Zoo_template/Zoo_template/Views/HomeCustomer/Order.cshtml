@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Tilte"] = "Đặt vé";
+    ViewData["Title"] = "Đặt vé";
     Layout = "~/Views/Shared/LayoutOrder.cshtml";
 }
 @model Customer
@@ -9,94 +9,93 @@
 
         <div class="form-group fullname">
             <label asp-for="Fullname">Họ tên</label>
-            <input type="text" id="fullname" placeholder="Nhập họ tên">
+            <input asp-for="Fullname" type="text" id="fullname" placeholder="Nhập họ tên">
             <span asp-validation-for="Fullname" class="text-danger"></span>
         </div>
 
-        <div class="form-group gender">
-            <label asp-for="Gender">Giới tính</label>
-            <select id="gender">
-                <option value="" selected disabled>Chọn giới tính</option>
-                <option value="Male">Nam</option>
-                <option value="Female">Nữ</option>
-                <option value="Other">Khác</option>
-            </select>
-            <span asp-validation-for="Gender" class="text-danger"></span>
+        <div class="form-group dateofbirth">
+            <label asp-for="DateOfBirth">Chọn ngày sinh</label>
+            <input asp-for="DateOfBirth" type="date" id="dateofbirth" placeholder="Chọn ngày sinh">
+            <span asp-validation-for="DateOfBirth" class="text-danger"></span>
         </div>
 
         <div class="form-group phonenumber">
             <label asp-for="PhoneNumber">Nhập số điện thoại</label>
-            <input type="text" id="phone" placeholder="Nhập số điện thoại">
+            <input asp-for="PhoneNumber" type="text" id="phone" placeholder="Nhập số điện thoại">
             <span asp-validation-for="PhoneNumber" class="text-danger"></span>
         </div>
 
         <div class="form-group email">
             <label asp-for="Email">Email</label>
-            <input type="text" id="email" placeholder="Nhập Email">
+            <input asp-for="Email" type="text" id="email" placeholder="Nhập Email">
             <span asp-validation-for="Email" class="text-danger"></span>
         </div>
 
         <div class="form-group typeofticket">
-            <label asp-for="typeofTicket">Loại vé</label>
-            <select id="typeofticket">
-                <option value="" selected disabled>Chọn loại vé</option>
-                <option value="Child">Trẻ em</option>
-                <option value="Adult">Người lớn</option>
-                <option value="ChildUnder1m3">Trẻ em dưới 1m3</option>
-            </select>
-            <div></div>
-            <span asp-validation-for="typeofTicket" class="text-danger"></span>
+            <label asp-for="TicketID">Loại vé</label>
+            <select asp-for="TicketID" class="custom-select" asp-items="@ViewBag.TicketID"></select>
+            <span asp-validation-for="TicketID" class="text-danger"></span>
         </div>
 
         <div class="form-group numberofticket">
             <label asp-for="numberofTicket">Số lượng vé</label>
-            <input type="number" id="numberOfTickets" placeholder="Nhập số lượng">
+            <input asp-for="numberofTicket" type="number" id="numberOfTickets" placeholder="Nhập số lượng">
             <span asp-validation-for="numberofTicket" class="text-danger"></span>
         </div>
 
-        <div class="form-group password">
-            <label asp-for="Password">Mật khẩu</label>
-            <input type="password" id="password" placeholder="Nhập mật khẩu">
-            <i id="pass-toggle-btn" class="fa-solid fa-eye-slash" onclick="togglePasswordVisibility()"></i>
-            <span asp-validation-for="Password" class="text-danger"></span>
+        <div class="form-group price">
+            <label asp-for="Price">Giá</label>
+            <input asp-for="Price" type="text" id="price" readonly class="form-control" value="0">
+            <span asp-validation-for="Price" class="text-danger"></span>
         </div>
 
         <div class="form-group date">
             <label asp-for="Date">Chọn ngày</label>
-            <input type="date" id="date" placeholder="Chọn ngày">
+            <input asp-for="Date" type="date" id="date" placeholder="Chọn ngày">
             <span asp-validation-for="Date" class="text-danger"></span>
         </div>
         
         <div class="form-group paymethod">
             <label asp-for="PayMethod">Phương thức thanh toán</label>
-            <select id="paymethod">
-                <option value="" selected disabled>Chọn phương thức thanh toán</option>
-                <option value="QRcode">Mã QR</option>
-                <option value="Offline">Thanh toán trực tiếp</option>
-            </select>
+            <select asp-for="PayMethod" class="custom-select" asp-items="@ViewBag.PayMethodID"></select>
             <div></div>
             <span asp-validation-for="PayMethod" class="text-danger"></span>
         </div>
 
         <div class="form-group submit-btn">
-            <input asp-for="" type="button" value="Xác nhận">
+            <input class="btn btn-primary" asp-action="Order" type="button" value="Xác nhận">
         </div>
 
     </form>
 </div>
-<script>
-    function togglePasswordVisibility() {
-        var passwordInput = document.getElementById("password");
-        var passwordToggleBtn = document.getElementById("pass-toggle-btn");
+@section Scripts {
+    <script>
+        const ticketSelect = document.getElementById('ticketSelect');
+        const numberOfTicketsInput = document.getElementById('numberOfTickets');
+        const priceInput = document.getElementById('price');
 
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-            passwordToggleBtn.classList.remove("fa-eye-slash");
-            passwordToggleBtn.classList.add("fa-eye");
-        } else {
-            passwordInput.type = "password";
-            passwordToggleBtn.classList.remove("fa-eye");
-            passwordToggleBtn.classList.add("fa-eye-slash");
+        async function fetchTicketPrice(ticketId) {
+            const response = await fetch(`/HomeCustomer/GetTicketPrice?TicketID=${ticketId}`);
+            const data = await response.json();
+
+            if (!data.success) {
+                alert(data.message);
+                return 0; // Trả về 0 nếu có lỗi
+            }
+
+            return data.price; // Trả về giá vé nếu thành công
         }
-    }
-</script>
+
+        async function updatePrice() {
+            const ticketID = ticketSelect.value;
+            const numberOfTickets = parseInt(numberOfTicketsInput.value) || 0;
+
+            const ticketPrice = await fetchTicketPrice(ticketID);
+            const totalPrice = ticketPrice * numberOfTickets;
+
+            priceInput.value = totalPrice.toLocaleString('vi-VN', { style: 'currency', currency: 'VND' });
+        }
+        ticketSelect.addEventListener('change', updatePrice);
+        numberOfTicketsInput.addEventListener('input', updatePrice);
+    </script>
+}

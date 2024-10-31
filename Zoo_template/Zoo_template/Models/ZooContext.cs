@@ -35,7 +35,7 @@ public partial class ZooContext : DbContext
     public virtual DbSet<TGuest> TGuests { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseSqlServer("Data Source=localhost;Initial Catalog=QLVuonThu_Web;User ID=sa;Password=123456;Trust Server Certificate=True");
+       => optionsBuilder.UseSqlServer("Data Source=DESKTOP-P86AVM7\\SQLEXPRESS;Initial Catalog=QLVuonThu_Web;User ID=sa;Password=123;Trust Server Certificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -105,12 +105,6 @@ public partial class ZooContext : DbContext
             entity.HasKey(e => e.UserName).HasName("PK_TLogin");
             entity.Property(e => e.UserName).ValueGeneratedNever();
         });
-
-        modelBuilder.Entity<TPayMethod>(entity =>
-        {
-            entity.HasKey(e => e.PayMethodId).HasName("PK__tPayMeth__E3C33F3DCFEAEDC9");
-        });
-
         modelBuilder.Entity<TGuest>(entity =>
         {
             entity.HasKey(e => e.GuestId).HasName("PK__tGuest__0C423C325F34E6C1");
@@ -123,6 +117,8 @@ public partial class ZooContext : DbContext
         {
             entity.HasKey(e => e.TicketId).HasName("PK__tTicket__712CC6277D4D9C45");
         });
+
+
 
         OnModelCreatingPartial(modelBuilder);
     }

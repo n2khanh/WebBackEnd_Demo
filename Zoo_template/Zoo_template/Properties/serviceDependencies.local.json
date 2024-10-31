@@ -1,18 +1,18 @@
 {
   "dependencies": {
-    "mssql1": {
-      "serviceConnectorResourceId": "",
-      "secretStore": "LocalSecretsFile",
-      "type": "mssql.onprem",
-      "connectionId": "ConnectionStrings:ZooContext",
-      "dynamicId": null
-    },
     "mssql3": {
       "serviceConnectorResourceId": "",
       "secretStore": "LocalSecretsFile",
       "resourceId": null,
       "type": "mssql.onprem",
       "connectionId": "ConnectionStrings:ZooContext2"
+    },
+    "mssql1": {
+      "serviceConnectorResourceId": "",
+      "secretStore": "LocalSecretsFile",
+      "resourceId": null,
+      "type": "mssql.onprem",
+      "connectionId": "ConnectionStrings:ZooContext"
     }
   }
 }

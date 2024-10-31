@@ -13,9 +13,9 @@ using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("e39eb213-368e-4a88-996f-c16c3563dafb")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("Zoo_template")]
-[assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
+[assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8ae2dafa0f3195f6af813ff4dbe2ce346dc5c6f4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+af5df9f7764dfebf24b0036f790242f2634f5f3e")]
 [assembly: System.Reflection.AssemblyProductAttribute("Zoo_template")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Zoo_template")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

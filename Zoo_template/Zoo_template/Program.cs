@@ -15,16 +15,21 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddDbContext<ZooContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext2")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext")));
 
-
+builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+//    DbInitializer.Initialize(services);
+//}
 
 if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Home/Error");
-}
+    {
+        app.UseExceptionHandler("/Home/Error");
+    }
 app.UseStaticFiles();
 
 app.UseRouting();

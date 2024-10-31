@@ -1,19 +1,23 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0 500px;
-  min-height: 100vh;
-  background: #1BB295;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 500px;
+    min-height: 100vh;
+    background: #1BB295;
+    background-image: url(https://saigonzoo.net/wp-content/uploads/2022/12/zoo2023.jpg);
+    background-size: cover; /* Điều chỉnh kích thước ảnh để phủ kín toàn bộ trang */
+    background-repeat: no-repeat; /* Ngăn chặn ảnh lặp lại */
+    background-position: center; /* Đặt ảnh ở vị trí trung tâm */
 }
 
 form {
@@ -106,4 +110,41 @@ form .password i {
 .submit-btn input:hover {
   background: #179b81;
 }
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 5px; /* Add rounded corners */
+}
+.back {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+}
+.back::before {
+    content: "\f053"; /* Font Awesome arrow left icon */
+    font-family: FontAwesome;
+    margin-right: 5px;
+}
+/* Form Container */
+form {
+    width: 500px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}

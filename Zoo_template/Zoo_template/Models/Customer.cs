@@ -1,6 +1,7 @@
 ﻿using Humanizer;
 using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Data.SqlTypes;
 
 namespace Zoo_template.Models
 {
@@ -34,20 +35,22 @@ namespace Zoo_template.Models
         [Required(ErrorMessage = "Số lượng vé không được để trống")]
         [Range(1, int.MaxValue, ErrorMessage = "Số lượng vé phải lớn hơn 0")]
         public int? numberofTicket {  get; set; }
-        [Required(ErrorMessage = "Mật khẩu không được để trống")]
-        [RegularExpression(@"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{8,}$",
-        ErrorMessage = "Mật khẩu phải có ít nhất 8 ký tự, bao gồm chữ hoa, chữ thường, số và ký tự đặc biệt")]
-        public string? Password {  get; set; }
         [Required]
         [FutureDate(ErrorMessage = "Ngày không hợp lệ. Vui lòng chọn ngày trong tương lai.")]
         [DataType(DataType.Date)]
         public DateTime? Date {  get; set; }
+        [Required(ErrorMessage = "Ngày sinh không được bỏ trống")]
+        [Range(typeof(DateTime), "1/1/1950", "1/1/2024", ErrorMessage = "Ngày sinh không hợp lệ")]
+        public DateTime? DateofBirth { get; set; }
         [Required]
-        public Gender? Gender { get; set; }
+       // public PayMethod? PayMethod { get; set; }
+        public int? TicketID { get; set; }
         [Required]
-        public PayMethod? PayMethod { get; set; }
+        //public virtual TypeTicket? Ticket { get; set; }
+       // [Required]
+        public string? Address { get; set; }
         [Required]
-        public TypeTicket? typeofTicket { get; set; }
-
+        [DataType(DataType.Currency)]
+        public SqlMoney? Price { get; set; }
     }
 }

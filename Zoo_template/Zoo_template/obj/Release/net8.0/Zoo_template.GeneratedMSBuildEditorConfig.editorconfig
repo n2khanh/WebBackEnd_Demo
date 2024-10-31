@@ -82,10 +82,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/AnimalTable.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcQW5pbWFsVGFibGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -140,10 +136,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/EmployeeTable.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xFbXBsb3llZVRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/phamt/Downloads/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Index.cshtml]

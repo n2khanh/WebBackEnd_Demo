@@ -43,29 +43,30 @@ namespace Zoo_template.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Register([Bind("UserName,Password,Name,Age,Gender,Email")] TLogin tLogin)
+        [HttpPost]
+        public IActionResult Register(TLogin model)
         {
             if (ModelState.IsValid)
             {
                 using (var db = new ZooContext())
                 {
                     // Kiểm tra xem tên người dùng đã tồn tại chưa
-                    var existingUser = db.TLogin.SingleOrDefault(u => u.UserName.ToLower() == tLogin.UserName.ToLower());
+                    var existingUser = db.TLogin.SingleOrDefault(u => u.UserName.ToLower() == model.UserName.ToLower());
                     if (existingUser != null)
                     {
                         ViewBag.error = "Tên người dùng đã tồn tại.";
-                        return View();
+                        return View(model);
                     }
 
                     // Tạo đối tượng User mới
                     var newUser = new TLogin
                     {
-                        UserName = tLogin.UserName,
-                        Password = tLogin.Password, // Mã hóa mật khẩu trước khi lưu
-                        Name = tLogin.Name,
-                        Age = tLogin.Age,
-                        Gender = tLogin.Gender,
-                        Email = tLogin.Email
+                        UserName = model.UserName,
+                        Password = model.Password, // Mã hóa mật khẩu trước khi lưu
+                        Name = model.Name,
+                        Age = model.Age,
+                        Gender = model.Gender,
+                        Email = model.Email
                     };
 
                     // Lưu thông tin người dùng vào cơ sở dữ liệu
@@ -78,7 +79,7 @@ namespace Zoo_template.Controllers
             }
 
             // Nếu model không hợp lệ, trả về view với model hiện tại
-            return View(tLogin);
+            return View(model);
         }
     }
 }
