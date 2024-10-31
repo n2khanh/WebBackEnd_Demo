@@ -119,6 +119,10 @@ public partial class ZooContext : DbContext
 
             entity.HasOne(d => d.Ticket).WithMany(p => p.TGuests).HasConstraintName("FK__tGuest__TicketID__6B24EA82");
         });
+        modelBuilder.Entity<TTicket>(entity =>
+        {
+            entity.HasKey(e => e.TicketId).HasName("PK__tTicket__712CC6277D4D9C45");
+        });
 
         OnModelCreatingPartial(modelBuilder);
     }
