@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@ViewBag.Title - Trang Đăng Nhập</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-primary text-white text-center py-3">
+        <h1>Đăng Nhập</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <!-- This is where the view content will be rendered -->
+                @RenderBody()
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-4 mt-5">
+        <p>&copy; 2024 Ứng Dụng Đăng Nhập. All rights reserved.</p>
+    </footer>
+
+    <!-- Bootstrap and JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
