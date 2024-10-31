@@ -7,8 +7,7 @@
     },
     "mssql3": {
       "type": "mssql",
-      "connectionId": "ConnectionStrings:ZooContext2",
-      "dynamicId": null
+      "connectionId": "ConnectionStrings:ZooContext2"
     }
   }
 }

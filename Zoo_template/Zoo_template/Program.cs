@@ -15,7 +15,7 @@ builder.Services.AddSession(options =>
 });
 
 builder.Services.AddDbContext<ZooContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext")));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("ZooContext2")));
 
 
 
@@ -35,6 +35,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Log}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

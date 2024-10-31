@@ -1,0 +1,45 @@
+﻿h1 {
+    color: #2d572c;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e9f7ef;
+}
+
+.table-dark th {
+    background-color: #34495e;
+    color: white;
+}
+
+.btn {
+    border-radius: 20px;
+    margin: 2px;
+}
+
+.btn-primary {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.btn-warning {
+    background-color: #f39c12;
+}
+
+.btn-info {
+    background-color: #3498db;
+}
+
+.btn-danger {
+    background-color: #e74c3c;
+}

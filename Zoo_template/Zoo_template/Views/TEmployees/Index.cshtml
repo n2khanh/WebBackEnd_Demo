@@ -1,76 +1,67 @@
 ﻿@model IEnumerable<Zoo_template.Models.TEmployee>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách nhân viên";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link href="~/css/Component.css" rel="stylesheet" />
+</head>
 
-<h1>Index</h1>
- @if(Context.Session.GetString("user")== "Admin"){
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
- }
-<table class="table">
-    <thead>
+<h1 class="text-center my-4">Danh sách Nhân Viên</h1>
+
+@if (Context.Session.GetString("user") == "Admin")
+{
+    <p class="text-end mb-3">
+        <a class="btn btn-primary" asp-action="Create">+ Thêm Nhân Viên Mới</a>
+    </p>
+}
+
+<table class="table table-hover table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.OnWork)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ResAreaNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Shift)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.Name)</th>
+            <th>@Html.DisplayNameFor(model => model.Gender)</th>
+            <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+            <th>@Html.DisplayNameFor(model => model.Address)</th>
+            <th>@Html.DisplayNameFor(model => model.OnWork)</th>
+            <th>@Html.DisplayNameFor(model => model.ResAreaNavigation)</th>
+            <th>@Html.DisplayNameFor(model => model.Shift)</th>
+            @if (Context.Session.GetString("user") == "Admin")
+            {
+                <th class="text-center">Hành động</th>
+            }
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.OnWork)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ResAreaNavigation.AreaName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Shift.Name)
-            </td>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                <td>
+                    @if (item.OnWork== true)
+                    {
+                        <span class="badge bg-success">Đang làm</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Nghỉ</span>
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.ResAreaNavigation.AreaName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Shift.Name)</td>
                 @if (Context.Session.GetString("user") == "Admin")
                 {
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.EmployeeId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.EmployeeId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.EmployeeId">Delete</a>
-            </td>
+                    <td class="text-center">
+                        <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.EmployeeId">Sửa</a>
+                        <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.EmployeeId">Chi tiết</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.EmployeeId">Xóa</a>
+                    </td>
                 }
-        </tr>
-}
+            </tr>
+        }
     </tbody>
 </table>
