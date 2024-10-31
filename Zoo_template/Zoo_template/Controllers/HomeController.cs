@@ -64,10 +64,9 @@ namespace Zoo_template.Controllers
 
         }
         public IActionResult Register()
-                    {
+                 {
                         return View();
-                    }
-        [HttpPost]
+                 }
         [HttpPost]
         public IActionResult Register(TLogin model)
         {
@@ -104,7 +103,7 @@ namespace Zoo_template.Controllers
             }
 
             // Nếu model không hợp lệ, trả về view với model hiện tại
-            return View(model);
+            return View();
         }
 
     }

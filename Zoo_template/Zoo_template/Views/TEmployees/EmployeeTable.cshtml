@@ -1,31 +1,4 @@
 ﻿@model IEnumerable<Zoo_template.Models.TEmployee>
-
-@{
-    ViewData["Title"] = "Danh sách nhân viên";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<head>
-    <link href="~/css/Component.css" rel="stylesheet" />
-</head>
-
-<h1 class="text-center my-4">Danh sách Nhân Viên</h1>
-
-@if (Context.Session.GetString("user") == "Admin")
-{
-    <p class="text-end mb-3">
-        <a class="btn btn-primary" asp-action="Create">+ Thêm Nhân Viên Mới</a>
-    </p>
-}
-<form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-    <div class="input-group">
-        <input id="keyword" class="form-control" name="keyword"
-               type="text" placeholder="Search Employee" />
-        <button id="btnSearch" class="btn btn-primary" type="button">
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
-</form>
-<div id="content">
 <table class="table table-hover table-striped table-bordered">
     <thead class="table-dark">
         <tr>
@@ -51,7 +24,7 @@
                 <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
                 <td>@Html.DisplayFor(modelItem => item.Address)</td>
                 <td>
-                    @if (item.OnWork== true)
+                    @if (item.OnWork == true)
                     {
                         <span class="badge bg-success">Đang làm</span>
                     }
@@ -74,42 +47,12 @@
         }
     </tbody>
 </table>
-    <ul class="pagination">
-        @for (int i = 1; i <= ViewBag.pageNum; i++)
-        {
-            <li class="page-item" page="@i">
-                <a class="page-link" href="javascript:void(0);">@i</a>
-            </li>
-        }
-    </ul>
-</div>
-
-@section Scripts {
-    <script>
-        $('body').on('click', 'li.page-item', function () {
-            const page = $(this).attr("page");
-            const keyword = $('#keyword').val();
-
-            $.ajax({
-                url: '@Url.Action("EmployeeFilter", "TEmployees")',
-                data: { keyword: keyword, pageIndex: page },
-                success: function (response) {
-                    $("div#content").html(response); // Replace only the content area
-                }
-            });
-        });
-
-        $('button#btnSearch').click(function () {
-            const keyword = $('#keyword').val();
-
-            $.ajax({
-                url: '@Url.Action("EmployeeFilter", "TEmployees")',
-                data: { keyword: keyword },
-                success: function (response) {
-                    $("div#content").html(response); // Replace only the content area
-                }
-            });
-        });
-    </script>
-}
+<ul class="pagination">
+    @for (int i = 1; i <= ViewBag.pageNum; i++)
+    {
+        <li class="page-item" page="@i">
+            <a class="page-link" href="javascript:void(0);">@i</a>
+        </li>
+    }
+</ul>
 

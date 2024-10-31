@@ -14,6 +14,8 @@ namespace Zoo_template.Controllers
     public class TAnimalsController : Controller
     {
         private readonly ZooContext _context;
+        private int pageSize = 3;   
+        public static int cageChoose;
       
 
 
@@ -24,17 +26,44 @@ namespace Zoo_template.Controllers
         }
 
         // GET: TAnimals
-        public async Task<IActionResult> Index(int? id)
+        public async Task<IActionResult> Index(int id)
         {
             var zooContext = _context.TAnimals
                 .Include(t => t.Cage)
                 .Include(t => t.Food)
                 .Include(t => t.Species)
                 .Where(t => t.CageId == id);
+            cageChoose = id;
+            int pageNum = (int)Math.Ceiling(zooContext.Count()/ (float)pageSize);
+            ViewBag.pageNum = pageNum;
+            var result = zooContext.Take(pageSize).ToList();
+            return View(result);
 
-            TempData["CageID"] = id;
-            return View(await zooContext.ToListAsync());
         }
+        public IActionResult AnimalFilter(string? keyword, int? pageIndex)
+        {
+            int cageId = cageChoose;
+            IQueryable<TAnimal> animals = _context.TAnimals
+                 .Include(a => a.Cage)
+                 .Include(a => a.Food)
+                 .Include(a => a.Species)
+                 .Where(a => a.CageId == cageId);
+
+            int page = (int)(pageIndex == null || pageIndex == 0 ? 1 : pageIndex);
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                animals = animals.Where(a => a.Name.ToLower().Contains(keyword.ToLower()));
+                ViewBag.keyword = keyword;
+            }
+
+            int pageNum = (int)Math.Ceiling(animals.Count() / (float)pageSize);
+            ViewBag.pageNum = pageNum;
+
+            var result = animals.Skip(pageSize * (page - 1)).Take(pageSize).ToList();
+
+            return PartialView("AnimalTable", result);
+        }
+
 
         // GET: TAnimals/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -71,6 +100,7 @@ namespace Zoo_template.Controllers
             {
                 // Auto-generate AnimalId (consider using database auto-increment instead)
                 tAnimal.CageId = (int?)TempData["CageID"];
+                tAnimal.AnimalId = (_context.TAnimals.Max(a => (int?)a.AnimalId) ?? 0) + 1;
                 _context.Add(tAnimal);
 
                 var cage = await _context.TCages.FindAsync(tAnimal.CageId);

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,7 @@ namespace Zoo_template.Controllers
     public class TEmployeesController : Controller
     {
         private readonly ZooContext _context;
+        private int pageSize = 3;
 
         public TEmployeesController(ZooContext context)
         {
@@ -22,7 +24,27 @@ namespace Zoo_template.Controllers
         public async Task<IActionResult> Index()
         {
             var zooContext = _context.TEmployees.Include(t => t.ResAreaNavigation).Include(t => t.Shift);
-            return View(await zooContext.ToListAsync());
+            int pageNum = (int)Math.Ceiling(zooContext.Count() / (float)pageSize);
+            ViewBag.pageNum = pageNum;
+            var result = zooContext.Take(pageSize).ToList();
+            return View(result);
+        }
+        public IActionResult EmployeeFilter(string? keyword, int? pageIndex)
+        {
+            IQueryable<TEmployee> employees = _context.TEmployees;
+
+            int page = (int)(pageIndex == null || pageIndex == 0 ? 1 : pageIndex);
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                employees = employees.Where(a => a.Name.ToLower().Contains(keyword.ToLower()));
+                ViewBag.keyword = keyword;
+            }
+
+            int pageNum = (int)Math.Ceiling(employees.Count() / (float)pageSize);
+            ViewBag.pageNum = pageNum;
+            var result = employees.Skip(pageSize * (page - 1)).Take(pageSize).ToList();
+
+            return PartialView("EmployeeTable", result);
         }
 
         // GET: TEmployees/Details/5
