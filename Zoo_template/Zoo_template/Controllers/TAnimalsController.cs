@@ -15,7 +15,7 @@ namespace Zoo_template.Controllers
     {
         private readonly ZooContext _context;
         private int pageSize = 3;
-        public static int cageChoose;
+        public static int? cageChoose;
 
 
 
@@ -26,8 +26,9 @@ namespace Zoo_template.Controllers
         }
 
         // GET: TAnimals
-        public async Task<IActionResult> Index(int id)
+        public async Task<IActionResult> Index(int? id)
         {
+            
             var zooContext = _context.TAnimals
                 .Include(t => t.Cage)
                 .Include(t => t.Food)
@@ -35,6 +36,7 @@ namespace Zoo_template.Controllers
                 .Where(t => t.CageId == id);
 
             cageChoose = id;
+            TempData["CageID"] = cageChoose;
             int pageNum = (int)Math.Ceiling(zooContext.Count() / (float)pageSize);
             ViewBag.pageNum = pageNum;
             var result = zooContext.Take(pageSize).ToList();
@@ -42,7 +44,7 @@ namespace Zoo_template.Controllers
         }
         public IActionResult AnimalFilter(string? keyword, int? pageIndex)
         {
-            int cageId = cageChoose;
+            int? cageId = cageChoose;
             IQueryable<TAnimal> animals = _context.TAnimals
                  .Include(a => a.Cage)
                  .Include(a => a.Food)
@@ -84,21 +86,22 @@ namespace Zoo_template.Controllers
 
         public IActionResult Create()
         {
-            // Ensure the model is not null
             var model = new TAnimal();
-            PopulateViewData(model);
+            model.CageId = cageChoose;
+            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodName");
+            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesName");
             return View(model);
         }
 
         // POST: TAnimals/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,Gender,Image,FoodId")] TAnimal tAnimal)
+        public async Task<IActionResult> Create([Bind("AnimalId Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,CageId,Gender,Image,FoodId")] TAnimal tAnimal)
         {
             if (ModelState.IsValid)
             {
                 // Auto-generate AnimalId (consider using database auto-increment instead)
-                tAnimal.CageId = (int?)TempData["CageID"];
+                tAnimal.CageId = cageChoose;
                 tAnimal.AnimalId = (_context.TAnimals.Max(a => (int?)a.AnimalId) ?? 0) + 1;
                 _context.Add(tAnimal);
 
@@ -113,7 +116,8 @@ namespace Zoo_template.Controllers
                 return RedirectToAction(nameof(Index), new { id = tAnimal.CageId });
             }
 
-            PopulateViewData(tAnimal);
+            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodName", tAnimal.FoodId);
+            ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesName", tAnimal?.SpeciesId);
             return View(tAnimal);
         }
 
@@ -143,7 +147,7 @@ namespace Zoo_template.Controllers
             {
                 try
                 {
-                    tAnimal.CageId = (int?)TempData["CageID"];
+                    tAnimal.CageId = cageChoose;
                     _context.Update(tAnimal);
                     await _context.SaveChangesAsync();
                 }
@@ -241,7 +245,7 @@ namespace Zoo_template.Controllers
 
         private void PopulateViewData(TAnimal tAnimal = null)
         {
-            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodName", tAnimal?.FoodId);
+            ViewData["FoodId"] = new SelectList(_context.TFoods, "FoodId", "FoodName", tAnimal.FoodId);
             ViewData["SpeciesId"] = new SelectList(_context.TSpecies, "SpeciesId", "SpeciesName", tAnimal?.SpeciesId);
         }
     }

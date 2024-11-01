@@ -88,7 +88,7 @@ namespace Zoo_template.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction("Success");
             }
-            ViewData["PayMethodI"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName", tGuest.PayMethodID);
+            ViewData["PayMethodId"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName", tGuest.PayMethodID);
             ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketName",tGuest.TicketId);
             return View(tGuest);
         }
@@ -111,8 +111,8 @@ namespace Zoo_template.Controllers
             {
                 return NotFound();
             }
-            ViewData["PayMethod"] = new SelectList(_context.TPayMethods, "PayMethodId", "PayMethodId", tGuest.PayMethodID);
-            ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketId", tGuest.TicketId);
+            ViewData["PayMethodId"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName");
+            ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketName");
             return View(tGuest);
         }
 
@@ -148,8 +148,8 @@ namespace Zoo_template.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PayMethod"] = new SelectList(_context.TPayMethods, "PayMethodId", "PayMethodId", tGuest.PayMethodID);
-            ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketId", tGuest.TicketId);
+            ViewData["PayMethod"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName", tGuest.PayMethodID);
+            ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketName", tGuest.TicketId);
             return View(tGuest);
         }
 

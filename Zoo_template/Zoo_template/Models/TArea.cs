@@ -14,6 +14,7 @@ public partial class TArea
     public int AreaId { get; set; }
 
     [StringLength(100)]
+   
     public string? AreaName { get; set; }
 
     [StringLength(255)]

@@ -19,11 +19,7 @@
             <div class="row">
                 <!-- Cột bên trái -->
                 <div class="col-md-6">
-                    <div class="form-group mb-3">
-                        <label asp-for="EmployeeId" class="control-label"></label>
-                        <input asp-for="EmployeeId" class="form-control" placeholder="Nhập mã nhân viên" />
-                        <span asp-validation-for="EmployeeId" class="text-danger"></span>
-                    </div>
+                    <input type="hidden" asp-for="EmployeeId" />
 
                     <div class="form-group mb-3">
                         <label asp-for="Name" class="control-label"></label>

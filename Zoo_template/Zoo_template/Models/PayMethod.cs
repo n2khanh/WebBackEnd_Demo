@@ -3,6 +3,7 @@
     public enum PayMethod
     {
         QRcode,
-        Offline
+        Offline,
+        QRCODE
     }
 }

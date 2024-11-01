@@ -1,0 +1,119 @@
+﻿@model Zoo_template.Models.TGuest
+
+@{
+    ViewData["Title"] = "Đặt vé";
+    Layout = "~/Views/Shared/LayoutOrder.cshtml";
+}
+
+<form id="bookingForm" method="post" asp-action="Order">
+    <div class="form-group">
+        <label asp-for="GuestName" class="control-label">Nhập họ tên</label>
+        <input asp-for="GuestName" class="form-control" />
+        <span asp-validation-for="GuestName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group dateofbirth">
+        <label asp-for="DateOfBirth">Chọn ngày sinh</label>
+        <input asp-for="DateOfBirth" type="date" id="dateofbirth" placeholder="Chọn ngày sinh" />
+        <span asp-validation-for="DateOfBirth" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="PhoneNumber" class="control-label">Nhập số điện thoại</label>
+        <input asp-for="PhoneNumber" class="form-control" />
+        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address" class="control-label">Nhập địa chỉ</label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="TicketId" class="control-label">Chọn loại vé</label>
+        <select asp-for="TicketId" class="form-control" asp-items="ViewBag.Ticket">
+            <option value="">Chọn loại vé</option>
+        </select>
+        <span asp-validation-for="TicketId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group image-container">
+        <button type="button" class="btn-xem" onclick="showPricePopup()">Xem giá vé</button>
+    </div>
+
+    <div class="form-group payment-method-select">
+        <label asp-for="PayMethodID" class="control-label">Chọn phương thức thanh toán</label>
+        <select asp-for="PayMethodID" class="form-control" asp-items="ViewBag.PayMethod">
+            <option value="">Chọn phương thức</option>
+        </select>
+        <span asp-validation-for="PayMethodID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Xác nhận" class="btn btn-primary submit-btn" />
+    </div>
+</form>
+
+<div id="pricePopup" class="modal hidden">
+    <div class="modal-content">
+        <span class="close" onclick="closePricePopup()">&times;</span>
+        <img src="~/images/tải xuống.jpg" alt="Vé vườn thú" />
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function showPricePopup() {
+            const pricePopup = document.getElementById('pricePopup');
+            pricePopup.classList.remove('hidden'); // Show the popup
+        }
+
+        function closePricePopup() {
+            const pricePopup = document.getElementById('pricePopup');
+            pricePopup.classList.add('hidden'); // Hide the popup
+        }
+    </script>
+    <style>
+        .modal {
+            display: flex;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+}

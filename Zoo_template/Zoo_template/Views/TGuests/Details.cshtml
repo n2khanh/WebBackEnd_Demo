@@ -39,16 +39,16 @@
             @Html.DisplayFor(model => model.Address)
         </dd>
         <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.PayMethodNavigation)
+            @Html.DisplayNameFor(model => model.PayMethodNavigation.MethodName)
         </dt>
         <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.PayMethodNavigation.PayMethodId)
+            @Html.DisplayFor(model => model.PayMethodNavigation.MethodName)
         </dd>
         <dt class="col-sm-3">
-            @Html.DisplayNameFor(model => model.Ticket)
+            @Html.DisplayNameFor(model => model.Ticket.TicketName)
         </dt>
         <dd class="col-sm-9">
-            @Html.DisplayFor(model => model.Ticket.TicketId)
+            @Html.DisplayFor(model => model.Ticket.TicketName)
         </dd>
     </dl>
 

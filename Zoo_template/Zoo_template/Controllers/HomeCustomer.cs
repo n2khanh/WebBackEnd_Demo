@@ -1,13 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using System.Diagnostics;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Zoo_template.Models;
 
 namespace Zoo_template.Controllers
 {
     public class HomeCustomer : Controller
     {
+        private readonly ZooContext _db;
+
+        public HomeCustomer(ZooContext db)
+        {
+            _db = db; // Use dependency injection for the DbContext
+        }
+
         public IActionResult GetTicketPrice(int? TicketID)
         {
             if (TicketID == null)
@@ -15,17 +23,14 @@ namespace Zoo_template.Controllers
                 return Json(new { success = false, message = "Lỗi" });
             }
 
-            using (var db = new ZooContext())
+            var ticket = _db.TTickets.Find(TicketID);
+
+            if (ticket == null)
             {
-                var ticket = db.TTickets.Find(TicketID); 
-
-                if (ticket == null)
-                {
-                    return Json(new { success = false, message = "Không tìm thấy vé" });
-                }
-
-                return Json(new { success = true, price = ticket.Price }); // Trả về giá vé dưới dạng JSON
+                return Json(new { success = false, message = "Không tìm thấy vé" });
             }
+
+            return Json(new { success = true, price = ticket.Price });
         }
 
         public IActionResult Index()
@@ -33,65 +38,82 @@ namespace Zoo_template.Controllers
             return View("CustomerIndex");
         }
 
-        public async Task<IActionResult> Order()
+        private IEnumerable<SelectListItem> GetTicketOptions()
         {
-            using (var db = new ZooContext())
+            return _db.TTickets.Select(t => new SelectListItem
             {
-                var paymentMethods = db.TPayMethods.ToList(); // Giả sử bạn có bảng PaymentMethods trong database
-                ViewBag.PayMethod = new SelectList(paymentMethods, "PayMethodId", "MethodName"); // Thay "Id" và "Name" bằng tên trường thực tế của bạn
-                var tickets = await db.TTickets.ToListAsync();
-                ViewBag.TTicket = new SelectList(tickets, "TicketId", "TicketName");
+                Value = t.TicketId.ToString(),
+                Text = t.TicketName
+            }).ToList();
+        }
 
-                // Lưu giá vé vào ViewBag
-                var ticketPrices = tickets.ToDictionary(ticket => ticket.TicketId, ticket => ticket.Price);
+        private IEnumerable<SelectListItem> GetPaymentMethodOptions()
+        {
+            return _db.TPayMethods.Select(pm => new SelectListItem
+            {
+                Value = pm.PayMethodId.ToString(),
+                Text = pm.MethodName
+            }).ToList();
+        }
 
-                ViewBag.TicketPrices = ticketPrices;
-            }
-
+        [HttpGet]
+        public IActionResult Order()
+        {
+            // Populate dropdowns for the initial GET request
+            ViewBag.Ticket = GetTicketOptions();
+            ViewBag.PayMethod = GetPaymentMethodOptions();
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> Order(TGuest model)
         {
-            using (var db = new ZooContext())
+            // Check if the model state is valid
+            if (!ModelState.IsValid)
             {
-
-                // Lưu thông tin đặt vé vào cơ sở dữ liệu (nếu cần thiết)
-                db.TGuests.Add(model); // Lưu thông tin khách hàng
-                await db.SaveChangesAsync(); // Lưu thay đổi
-
-                // Lấy danh sách phương thức thanh toán từ cơ sở dữ liệu
-                var paymentMethods = await db.TPayMethods.ToListAsync();
-
-                // Chuyển hướng tùy theo phương thức thanh toán
-                var selectedPaymentMethod = paymentMethods.FirstOrDefault(pm => pm.PayMethodId == model.PayMethodID);
-
-                if (selectedPaymentMethod != null) // Nếu phương thức thanh toán tồn tại
-                {
-                    if (selectedPaymentMethod.MethodName == "Thanh Toán Trực Tiếp")
-                    {
-                        return RedirectToAction("Success");
-                    }
-                    else if (selectedPaymentMethod.MethodName == "Thanh Toán Online")
-                    {
-                        return RedirectToAction("PaymentPage");
-                    }
-                }
-                ModelState.AddModelError("PayMethodID", "Phương thức thanh toán không hợp lệ.");
-                return View(model);
+                // Repopulate dropdowns on validation failure
+                ViewBag.Ticket = GetTicketOptions();
+                ViewBag.PayMethod = GetPaymentMethodOptions();
+                return View(model); // Return the view with model errors
             }
+
+            // Retrieve the selected payment method
+            var selectedPaymentMethod = await _db.TPayMethods
+                .FirstOrDefaultAsync(pm => pm.PayMethodId == model.PayMethodID);
+
+            if (selectedPaymentMethod != null) // If the payment method exists
+            {
+                _db.TGuests.Add(model);
+                await _db.SaveChangesAsync();
+                if (selectedPaymentMethod.MethodName == "Tiền Mặt")
+                {
+                    return RedirectToAction("Success");
+                }
+                else if (selectedPaymentMethod.MethodName == "Chuyển Khoản")
+                {
+                    return RedirectToAction("QRcode");
+                }
+               
+            }
+
+            // If we reach here, the payment method is invalid
+            ModelState.AddModelError("PayMethodID", "Phương thức thanh toán không hợp lệ.");
+            ViewBag.Ticket = GetTicketOptions(); // Repopulate dropdowns
+            ViewBag.PayMethod = GetPaymentMethodOptions();
+            return View(model);
         }
 
+        [HttpGet]
         public IActionResult Success()
         {
-            return View(); // Trả về view thông báo thành công
+            ViewBag.Message = "Đặt vé thành công!";
+            return View();
         }
 
-        public IActionResult PaymentPage()
+        [HttpGet]
+        public IActionResult QRcode()
         {
-            return View(); // Trả về view thanh toán online
+            return View(); // Return the online payment view
         }
-
-
     }
 }

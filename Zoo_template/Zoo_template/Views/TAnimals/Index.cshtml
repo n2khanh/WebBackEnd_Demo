@@ -58,8 +58,6 @@
             }
         </tbody>
     </table>
-</div>
-
     <ul class="pagination">
         @for (int i = 1; i <= ViewBag.pageNum; i++)
         {
@@ -68,6 +66,9 @@
             </li>
         }
     </ul>
+</div>
+
+
 
 <p class="text-end mb-3">
     <a class="btn btn-primary" asp-action="Create">+ Tạo mới</a>

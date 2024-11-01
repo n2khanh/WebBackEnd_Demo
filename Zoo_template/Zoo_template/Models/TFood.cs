@@ -14,6 +14,8 @@ public partial class TFood
     public int FoodId { get; set; }
 
     [StringLength(100)]
+    [Display(Name = "Loại thức ăn ")]
+    [Required(ErrorMessage = "Vui lòng cho biết loại thức ăn")]
     public string? FoodName { get; set; }
 
     [StringLength(100)]

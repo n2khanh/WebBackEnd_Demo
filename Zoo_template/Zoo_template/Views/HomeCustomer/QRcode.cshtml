@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Đặt vé";
+    Layout = "~/Views/Shared/LayoutOrder.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .noi-len {
+            background-color: #f0f0f0;
+            padding: 10px; /* Further reduced padding */
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            color: green;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 5px; /* Further reduced margin for the button */
+            padding: 8px 12px; /* Adjusted padding for the button */
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+            .back-link:hover {
+                background-color: #0056b3;
+            }
+
+        img {
+            max-width: 50%; /* Reduced image size further */
+            height: auto; /* Maintain aspect ratio */
+            margin: 5px auto; /* Further reduced margin below the image */
+            display: block; /* Center the image */
+        }
+    </style>
+</head>
+<body>
+    <div class="noi-len">
+        <img src="~/images/QR.jpg" alt="Payment QR Code" />
+        <p>Quý khách vui lòng quét để thanh toán nếu đã hoàn tất.</p>
+        <a asp-controller="HomeCustomer" asp-action="Index" class="back-link">Trở về</a>
+    </div>
+</body>
+</html>

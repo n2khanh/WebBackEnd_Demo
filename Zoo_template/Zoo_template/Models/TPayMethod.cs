@@ -8,6 +8,8 @@ public partial class TPayMethod
 {
     [Key]
     [Column("PayMethodID")]
+    [Required(ErrorMessage = "Vui lòng nhập phương thức thanh toán ")]
+    [Display(Name = "Phương thức thanh toán")]
     public int PayMethodId { get; set; }
 
     [StringLength(100)]

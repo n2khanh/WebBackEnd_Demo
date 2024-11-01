@@ -1,4 +1,7 @@
 ﻿@model IEnumerable<Zoo_template.Models.TEmployee>
+<head>
+    <link href="~/css/Component.css" rel="stylesheet" />
+</head>
 <table class="table table-hover table-striped table-bordered">
     <thead class="table-dark">
         <tr>
@@ -9,10 +12,7 @@
             <th>@Html.DisplayNameFor(model => model.OnWork)</th>
             <th>@Html.DisplayNameFor(model => model.ResAreaNavigation)</th>
             <th>@Html.DisplayNameFor(model => model.Shift)</th>
-            @if (Context.Session.GetString("user") == "Admin")
-            {
-                <th class="text-center">Hành động</th>
-            }
+            <th class="text-center">Hành động</th>
         </tr>
     </thead>
     <tbody>

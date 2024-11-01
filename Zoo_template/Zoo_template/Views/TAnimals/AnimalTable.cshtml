@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Zoo_template.Models.TAnimal>
 <head>
-    <link href="~/css/form.css" rel="stylesheet" />
+    <link href="~/css/Component.css" rel="stylesheet" />
 </head>
-<table class="table table-striped">
-    <thead>
+<table class="table table-hover table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
             <th>@Html.DisplayNameFor(model => model.Name)</th>
             <th>@Html.DisplayNameFor(model => model.ScienName)</th>
@@ -12,10 +12,10 @@
             <th>@Html.DisplayNameFor(model => model.Age)</th>
             <th>@Html.DisplayNameFor(model => model.Gender)</th>
             <th>@Html.DisplayNameFor(model => model.Image)</th>
-            <th>@Html.DisplayNameFor(model => model.CageId)</th>
-            <th>@Html.DisplayNameFor(model => model.Food.FoodName)</th>
-            <th>@Html.DisplayNameFor(model => model.Species.SpeciesName)</th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.Cage)</th>
+            <th>@Html.DisplayNameFor(model => model.Food)</th>
+            <th>@Html.DisplayNameFor(model => model.Species)</th>
+            <th class="text-center">Hành động</th>
         </tr>
     </thead>
     <tbody>
@@ -28,22 +28,19 @@
                 <td>@Html.DisplayFor(modelItem => item.TimeOut)</td>
                 <td>@Html.DisplayFor(modelItem => item.Age)</td>
                 <td>@Html.DisplayFor(modelItem => item.Gender)</td>
-                <td>
-                    <img src="~/images/@item.Image" alt="Image of @item.Name" width="100px" class="img-thumbnail" />
-                </td>
+                <td><img src="~/images/@item.Image" width="200px" /></td>
                 <td>@Html.DisplayFor(modelItem => item.CageId)</td>
                 <td>@Html.DisplayFor(modelItem => item.Food.FoodName)</td>
                 <td>@Html.DisplayFor(modelItem => item.Species.SpeciesName)</td>
-                <td>
-                    <a asp-action="Edit" asp-route-id="@item.AnimalId" class="btn btn-sm btn-warning">Edit</a>
-                    <a asp-action="Details" asp-route-id="@item.AnimalId" class="btn btn-sm btn-info">Details</a>
-                    <a asp-action="Delete" asp-route-id="@item.AnimalId" class="btn btn-sm btn-danger">Delete</a>
+                <td class="text-center">
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.AnimalId">Sửa</a>
+                    <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.AnimalId">Chi tiết</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.AnimalId">Xóa</a>
                 </td>
             </tr>
         }
     </tbody>
 </table>
-
 <ul class="pagination">
     @for (int i = 1; i <= ViewBag.pageNum; i++)
     {
