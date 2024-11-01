@@ -5,37 +5,46 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Create</h1>
+<head>
+    <link href="~/css/form.css" rel="stylesheet" />
+</head>
 
-<h4>TCage</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<h1 class="text-center mb-3">Thêm Chuồng Mới</h1>
+
+<div class="container">
+    <div class="card shadow-sm p-3">
+        <h4 class="card-title text-center mb-3">Thông Tin Chuồng</h4>
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
+
+            <!-- Area selection -->
+            <div class="form-group mb-3">
                 <label asp-for="AreaId" class="control-label"></label>
-                <select asp-for="AreaId" class ="form-control" asp-items="ViewBag.AreaId"></select>
+                <select asp-for="AreaId" class="form-control" asp-items="ViewBag.AreaId">
+                    <option value="">-- Chọn khu vực --</option>
+                </select>
+                <span asp-validation-for="AreaId" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <!-- Maximum Quantity Input -->
+            <div class="form-group mb-3">
                 <label asp-for="MaxQuantity" class="control-label"></label>
-                <input asp-for="MaxQuantity" class="form-control" />
+                <input asp-for="MaxQuantity" class="form-control" placeholder="Nhập số lượng tối đa" />
                 <span asp-validation-for="MaxQuantity" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <!-- Notes Input -->
+            <div class="form-group mb-3">
                 <label asp-for="Note" class="control-label"></label>
-                <input asp-for="Note" class="form-control" />
+                <input asp-for="Note" class="form-control" placeholder="Ghi chú" />
                 <span asp-validation-for="Note" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <!-- Submit Button -->
+            <div class="text-center mt-3">
+                <input type="submit" value="Thêm Chuồng" class="btn btn-primary px-3" />
+                <a asp-action="Index" class="btn btn-secondary ml-2">Quay lại danh sách</a>
             </div>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
-

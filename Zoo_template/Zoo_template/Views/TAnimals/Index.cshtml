@@ -4,100 +4,62 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-<h1>Animal in cage</h1>
+<head>
+    <link href="~/css/Component.css" rel="stylesheet" />
+</head>
+<h1 class="text-center my-4">Động vật trong chuồng</h1>
 
 <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
     <div class="input-group">
-        <input id="keyword" class="form-control" name="keyword"
-               type="text" placeholder="Search Employee" />
+        <input id="keyword" class="form-control" name="keyword" type="text" placeholder="Tìm kiếm động vật" />
         <button id="btnSearch" class="btn btn-primary" type="button">
             <i class="fas fa-search"></i>
         </button>
     </div>
 </form>
+
 <div id="content">
-    <table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ScienName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeIn)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TimeOut)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Age)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Image)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cage)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Food)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Species)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ScienName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeIn)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TimeOut)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-            <td>
-                <img src="~/images/@item.Image" width="200px" />
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CageId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Food.FoodName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Species.SpeciesName)
-            </td>
-           
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.AnimalId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.AnimalId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.AnimalId">Delete</a> 
-                    
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Name)</th>
+                <th>@Html.DisplayNameFor(model => model.ScienName)</th>
+                <th>@Html.DisplayNameFor(model => model.TimeIn)</th>
+                <th>@Html.DisplayNameFor(model => model.TimeOut)</th>
+                <th>@Html.DisplayNameFor(model => model.Age)</th>
+                <th>@Html.DisplayNameFor(model => model.Gender)</th>
+                <th>@Html.DisplayNameFor(model => model.Image)</th>
+                <th>@Html.DisplayNameFor(model => model.Cage)</th>
+                <th>@Html.DisplayNameFor(model => model.Food)</th>
+                <th>@Html.DisplayNameFor(model => model.Species)</th>
+                <th class="text-center">Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.ScienName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TimeIn)</td>
+                    <td>@Html.DisplayFor(modelItem => item.TimeOut)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Age)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Gender)</td>
+                    <td><img src="~/images/@item.Image" width="200px" /></td>
+                    <td>@Html.DisplayFor(modelItem => item.CageId)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Food.FoodName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Species.SpeciesName)</td>
+                    <td class="text-center">
+                        <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.AnimalId">Sửa</a>
+                        <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.AnimalId">Chi tiết</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.AnimalId">Xóa</a>
                     </td>
-                
-        </tr>
-}
-    </tbody>
-</table>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
     <ul class="pagination">
         @for (int i = 1; i <= ViewBag.pageNum; i++)
         {
@@ -106,13 +68,14 @@
             </li>
         }
     </ul>
-</div>
-<p>
-    <a asp-action="Create" >Create New</a>
+
+<p class="text-end mb-3">
+    <a class="btn btn-primary" asp-action="Create">+ Tạo mới</a>
 </p>
-<p>
-    <a href="http://localhost:5249/TCages">Cage Information</a>
+<p class="text-end mb-3">
+    <a class="btn btn-secondary" href="http://localhost:5249/TCages">Thông tin chuồng</a>
 </p>
+
 
 
 @section Scripts {

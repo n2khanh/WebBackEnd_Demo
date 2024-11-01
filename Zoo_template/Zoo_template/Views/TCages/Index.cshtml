@@ -4,61 +4,44 @@
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link href="~/css/Component.css" rel="stylesheet" />
+</head>
 
-<h1>Cage Information</h1>
- @if(Context.Session.GetString("user")== "Admin"){
-<p>
-    <a asp-action="Create">Create New</a>
+<h1 class="text-center my-4">Thông tin Chuồng</h1>
+
+<p class="text-end mb-3">
+    <a class="btn btn-primary" asp-action="Create">+ Tạo Chuồng Mới</a>
 </p>
- }
-<table class="table">
-    <thead>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead class="table-dark">
         <tr>
-            <th>@Html.DisplayNameFor(model => model.CageId) </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MaxQuantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Note)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Area)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.CageId)</th>
+            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+            <th>@Html.DisplayNameFor(model => model.MaxQuantity)</th>
+            <th>@Html.DisplayNameFor(model => model.Note)</th>
+            <th>@Html.DisplayNameFor(model => model.Area)</th>
+            <th class="text-center">Hành động</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.CageId) 
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MaxQuantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Area.AreaName)
-            </td>
-                @if (Context.Session.GetString("user") == "Admin")
-                {
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.CageId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.CageId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.CageId">Delete</a> |
-                 <a href="@Url.Action("Index", "TAnimals", new { id = item.CageId })">More...</a>
-
-            </td>
-                }
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.CageId)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.MaxQuantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.Note)</td>
+                <td>@Html.DisplayFor(modelItem => item.Area.AreaName)</td>
+                <td class="text-center">
+                    <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.CageId">Sửa</a>
+                    <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.CageId">Chi tiết</a>
+                    <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.CageId">Xóa</a>
+                    <a class="btn btn-sm btn-secondary" href="@Url.Action("Index", "TAnimals", new { id = item.CageId })">Thêm...</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+

@@ -1,12 +1,12 @@
 {
   "dependencies": {
-    "mssql3": {
-      "type": "mssql",
-      "connectionId": "ConnectionStrings:ZooContext2"
-    },
     "mssql1": {
       "type": "mssql",
       "connectionId": "ConnectionStrings:ZooContext"
+    },
+    "mssql3": {
+      "type": "mssql",
+      "connectionId": "ConnectionStrings:ZooContext2"
     }
   }
 }

@@ -10,12 +10,9 @@
 
 <h1 class="text-center my-4">Danh sách Nhân Viên</h1>
 
-@if (Context.Session.GetString("user") == "Admin")
-{
     <p class="text-end mb-3">
         <a class="btn btn-primary" asp-action="Create">+ Thêm Nhân Viên Mới</a>
     </p>
-}
 <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
     <div class="input-group">
         <input id="keyword" class="form-control" name="keyword"
@@ -36,11 +33,8 @@
             <th>@Html.DisplayNameFor(model => model.Address)</th>
             <th>@Html.DisplayNameFor(model => model.OnWork)</th>
             <th>@Html.DisplayNameFor(model => model.ResAreaNavigation)</th>
-            <th>@Html.DisplayNameFor(model => model.Shift)</th>
-            @if (Context.Session.GetString("user") == "Admin")
-            {
-                <th class="text-center">Hành động</th>
-            }
+            <th>@Html.DisplayNameFor(model => model.Shift)</th> 
+                <th class="text-center">Hành động</th> 
         </tr>
     </thead>
     <tbody>
@@ -95,7 +89,7 @@
                 url: '@Url.Action("EmployeeFilter", "TEmployees")',
                 data: { keyword: keyword, pageIndex: page },
                 success: function (response) {
-                    $("div#content").html(response); // Replace only the content area
+                    $("div#content").html(response);
                 }
             });
         });

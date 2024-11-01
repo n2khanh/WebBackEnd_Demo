@@ -17,167 +17,167 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Zoo_template
 build_property.RootNamespace = Zoo_template
-build_property.ProjectDir = C:\Users\Khanh\Documents\GitHub\WebBackEnd_Demo\Zoo_template\Zoo_template\
+build_property.ProjectDir = C:\Users\User\Documents\GitHub\WebBackEnd_Demo\Zoo_template\Zoo_template\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Khanh\Documents\GitHub\WebBackEnd_Demo\Zoo_template\Zoo_template
+build_property.MSBuildProjectDirectory = C:\Users\User\Documents\GitHub\WebBackEnd_Demo\Zoo_template\Zoo_template
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Component.razor]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Component.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50LnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/HomeCustomer/CustomerIndex.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/HomeCustomer/CustomerIndex.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZUN1c3RvbWVyXEN1c3RvbWVySW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Home/Index.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Home/Privacy.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Log/Login.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Log/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nXExvZ2luLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Log/Register.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Log/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9nXFJlZ2lzdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/Error.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/HeaderLayout.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/HeaderLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlckxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/LayoutCustomer.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/LayoutCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dEN1c3RvbWVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/LayoutOrder.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/LayoutOrder.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExheW91dE9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/Login_Layout.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/Login_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXExvZ2luX0xheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/_Layout.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/AnimalTable.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/AnimalTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcQW5pbWFsVGFibGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Create.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Delete.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Details.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Edit.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Index.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TAnimals/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEFuaW1hbHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Create.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Delete.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Details.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Edit.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Index.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TCages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVENhZ2VzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Create.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Delete.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Details.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Edit.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/EmployeeTable.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/EmployeeTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xFbXBsb3llZVRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Index.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TEmployees/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEVtcGxveWVlc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Create.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEd1ZXN0c1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Delete.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEd1ZXN0c1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Details.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEd1ZXN0c1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Edit.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEd1ZXN0c1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/GuestTable.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/GuestTable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEd1ZXN0c1xHdWVzdFRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Index.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEd1ZXN0c1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Success.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/TGuests/Success.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVEd1ZXN0c1xTdWNjZXNzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/_ViewImports.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Khanh/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/_ViewStart.cshtml]
+[C:/Users/User/Documents/GitHub/WebBackEnd_Demo/Zoo_template/Zoo_template/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

@@ -5,83 +5,59 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Danh sách khách hàng</h1>
+<head>
+    <link href="~/css/Component.css" rel="stylesheet" />
+</head>
+
+<h1 class="text-center my-4">Danh sách Khách Hàng</h1>
 
 <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
     <div class="input-group">
-        <input id="keyword" class="form-control" name="keyword"
-               type="text" placeholder="Search Employee" />
+        <input id="keyword" class="form-control" name="keyword" type="text" placeholder="Tìm kiếm khách hàng" />
         <button id="btnSearch" class="btn btn-primary" type="button">
             <i class="fas fa-search"></i>
         </button>
     </div>
 </form>
+
 <div id="content">
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.GuestName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhoneNumber)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Address)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PayMethodNavigation.MethodName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Ticket.TicketName)
-            </th>
-            <th>
-                    @Html.DisplayNameFor(model => model.Ticket.Time)
-            </th>
-                <th>
-                    @Html.DisplayNameFor(model => model.Ticket.Price)
-                </th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.GuestName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhoneNumber)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PayMethodNavigation.MethodName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ticket.TicketName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ticket.Time)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Ticket.Price)
-           </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.GuestId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.GuestId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.GuestId">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <table class="table table-hover table-striped table-bordered">
+        <thead class="table-dark">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.GuestName)</th>
+                <th>@Html.DisplayNameFor(model => model.DateOfBirth)</th>
+                <th>@Html.DisplayNameFor(model => model.PhoneNumber)</th>
+                <th>@Html.DisplayNameFor(model => model.Address)</th>
+                <th>@Html.DisplayNameFor(model => model.PayMethodNavigation.MethodName)</th>
+                <th>@Html.DisplayNameFor(model => model.Ticket.TicketName)</th>
+                <th>@Html.DisplayNameFor(model => model.Ticket.Time)</th>
+                <th>@Html.DisplayNameFor(model => model.Ticket.Price)</th>
+                <th class="text-center">Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.GuestName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.DateOfBirth)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PhoneNumber)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                    <td>@Html.DisplayFor(modelItem => item.PayMethodNavigation.MethodName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ticket.TicketName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ticket.Time)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Ticket.Price)</td>
+                    <td class="text-center">
+                        <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.GuestId">Sửa</a>
+                        <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.GuestId">Chi tiết</a>
+                        <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.GuestId">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
 <ul class="pagination">
     @for (int i = 1; i <= ViewBag.pageNum; i++)
     {
@@ -114,7 +90,7 @@
                 url: '@Url.Action("GuestFilter", "TGuests")',
                 data: { keyword: keyword },
                 success: function (response) {
-                    $("div#content").html(response); // Replace only the content area
+                    $("div#content").html(response); 
                 }
             });
         });
