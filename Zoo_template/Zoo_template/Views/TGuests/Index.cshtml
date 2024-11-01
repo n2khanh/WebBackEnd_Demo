@@ -5,11 +5,18 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Index</h1>
+<h1>Danh sách khách hàng</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
+<form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+    <div class="input-group">
+        <input id="keyword" class="form-control" name="keyword"
+               type="text" placeholder="Search Employee" />
+        <button id="btnSearch" class="btn btn-primary" type="button">
+            <i class="fas fa-search"></i>
+        </button>
+    </div>
+</form>
+<div id="content">
 <table class="table">
     <thead>
         <tr>
@@ -26,12 +33,17 @@
                 @Html.DisplayNameFor(model => model.Address)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PayMethodNavigation)
+                @Html.DisplayNameFor(model => model.PayMethodNavigation.MethodName)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Ticket)
+                @Html.DisplayNameFor(model => model.Ticket.TicketName)
             </th>
-            <th></th>
+            <th>
+                    @Html.DisplayNameFor(model => model.Ticket.Time)
+            </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Ticket.Price)
+                </th>
         </tr>
     </thead>
     <tbody>
@@ -50,11 +62,17 @@
                 @Html.DisplayFor(modelItem => item.Address)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PayMethodNavigation.PayMethodId)
+                @Html.DisplayFor(modelItem => item.PayMethodNavigation.MethodName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Ticket.TicketId)
+                @Html.DisplayFor(modelItem => item.Ticket.TicketName)
             </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticket.Time)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ticket.Price)
+           </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.GuestId">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.GuestId">Details</a> |
@@ -64,3 +82,41 @@
 }
     </tbody>
 </table>
+<ul class="pagination">
+    @for (int i = 1; i <= ViewBag.pageNum; i++)
+    {
+        <li class="page-item" page="@i">
+            <a class="page-link" href="javascript:void(0);">@i</a>
+        </li>
+    }
+</ul>
+</div>
+
+@section Scripts {
+    <script>
+        $('body').on('click', 'li.page-item', function () {
+            const page = $(this).attr("page");
+            const keyword = $('#keyword').val();
+
+            $.ajax({
+                url: '@Url.Action("GuestFilter", "TGuests")',
+                data: { keyword: keyword, pageIndex: page },
+                success: function (response) {
+                    $("div#content").html(response); // Replace only the content area
+                }
+            });
+        });
+
+        $('button#btnSearch').click(function () {
+            const keyword = $('#keyword').val();
+
+            $.ajax({
+                url: '@Url.Action("GuestFilter", "TGuests")',
+                data: { keyword: keyword },
+                success: function (response) {
+                    $("div#content").html(response); // Replace only the content area
+                }
+            });
+        });
+    </script>
+}

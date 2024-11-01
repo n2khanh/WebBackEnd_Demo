@@ -4,58 +4,48 @@
     ViewData["Title"] = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<head>
+    <link href="~/css/form.css" rel="stylesheet" />
+</head>
+<h1 class="text-center mb-3">Chi Tiết Nhân Viên</h1>
 
-<h1>Details</h1>
+<div class="container">
+    <div class="card shadow-sm p-3">
+        <h4 class="card-title text-center mb-3">Thông Tin Nhân Viên</h4>
+        <dl class="row">
+            <!-- Tên -->
+            <dt class="col-sm-4">Tên</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Name)</dd>
 
-<div>
-    <h4>TEmployee</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Gender)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Gender)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhoneNumber)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhoneNumber)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Address)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Address)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.OnWork)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.OnWork)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ResAreaNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ResAreaNavigation.AreaName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Shift)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Shift.Name)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.EmployeeId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+            <!-- Giới Tính -->
+            <dt class="col-sm-4">Giới Tính</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Gender)</dd>
+
+            <!-- Số Điện Thoại -->
+            <dt class="col-sm-4">Số Điện Thoại</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.PhoneNumber)</dd>
+
+            <!-- Địa Chỉ -->
+            <dt class="col-sm-4">Địa Chỉ</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Address)</dd>
+
+            <!-- Tình Trạng Công Việc -->
+            <dt class="col-sm-4">Tình Trạng Công Việc</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.OnWork)</dd>
+
+            <!-- Khu Vực Làm Việc -->
+            <dt class="col-sm-4">Khu Vực Làm Việc</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.ResAreaNavigation.AreaName)</dd>
+
+            <!-- Ca Làm Việc -->
+            <dt class="col-sm-4">Ca Làm Việc</dt>
+            <dd class="col-sm-8">@Html.DisplayFor(model => model.Shift.Name)</dd>
+        </dl>
+
+        <!-- Nút Chỉnh Sửa và Quay Lại -->
+        <div class="text-center mt-3">
+            <a asp-action="Edit" asp-route-id="@Model?.EmployeeId" class="btn btn-primary px-3">Chỉnh Sửa</a>
+            <a asp-action="Index" class="btn btn-secondary ml-2">Quay lại danh sách</a>
+        </div>
+    </div>
 </div>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Printing;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,7 @@ namespace Zoo_template.Controllers
     public class TGuestsController : Controller
     {
         private readonly ZooContext _context;
+        private int pageSize = 3;
 
         public TGuestsController(ZooContext context)
         {
@@ -23,6 +25,23 @@ namespace Zoo_template.Controllers
         {
             var zooContext = _context.TGuests.Include(t => t.PayMethodNavigation).Include(t => t.Ticket);
             return View(await zooContext.ToListAsync());
+        }
+        public IActionResult GuestFilter(string? keyword, int? pageIndex)
+        {
+            IQueryable<TGuest> Guests = _context.TGuests;
+
+            int page = (int)(pageIndex == null || pageIndex == 0 ? 1 : pageIndex);
+            if (!string.IsNullOrEmpty(keyword))
+            {
+                Guests = Guests.Where(a => a.GuestName.ToLower().Contains(keyword.ToLower()));
+                ViewBag.keyword = keyword;
+            }
+
+            int pageNum = (int)Math.Ceiling(Guests.Count() / (float)pageSize);
+            ViewBag.pageNum = pageNum;
+            var result = Guests.Skip(pageSize * (page - 1)).Take(pageSize).ToList();
+
+            return PartialView("GuestTable", result);
         }
 
         // GET: TGuests/Details/5
@@ -48,8 +67,8 @@ namespace Zoo_template.Controllers
         // GET: TGuests/Create
         public IActionResult Create()
         {
-            ViewData["PayMethod"] = new SelectList(_context.TPayMethods, "PayMethodId", "PayMethodId");
-            ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketId");
+            ViewData["PayMethod"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName");
+            ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketName");
             return View();
         }
 
@@ -64,11 +83,16 @@ namespace Zoo_template.Controllers
             {
                 _context.Add(tGuest);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("Success");
             }
-            ViewData["PayMethod"] = new SelectList(_context.TPayMethods, "PayMethodId", "PayMethodId", tGuest.PayMethodID);
-            ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketId", tGuest.TicketId);
+            ViewData["PayMethodI"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName", tGuest.PayMethodID);
+            ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketName",tGuest.TicketId);
             return View(tGuest);
+        }
+        public IActionResult Success()
+        {
+            ViewBag.Message = "Đặt vé thành công!";
+            return View();
         }
 
         // GET: TGuests/Edit/5

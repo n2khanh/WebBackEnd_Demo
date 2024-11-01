@@ -32,8 +32,10 @@ namespace Zoo_template.Controllers
                     return View();
                 }
                 HttpContext.Session.SetString("user", user.UserName);
+               if(user.UserName == "Admin") return RedirectToAction("Index", "Home");
+               else return RedirectToAction("Index", "HomeCustomer");
 
-                return RedirectToAction("Index", "Home");
+
             }
 
 
@@ -43,7 +45,7 @@ namespace Zoo_template.Controllers
             return View();
         }
         [HttpPost]
-        [HttpPost]
+      
         public IActionResult Register(TLogin model)
         {
             if (ModelState.IsValid)
@@ -80,6 +82,12 @@ namespace Zoo_template.Controllers
 
             // Nếu model không hợp lệ, trả về view với model hiện tại
             return View(model);
+        }
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+
+            return RedirectToAction("Login", "Log");
         }
     }
 }
