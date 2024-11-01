@@ -24,7 +24,10 @@ namespace Zoo_template.Controllers
         public async Task<IActionResult> Index()
         {
             var zooContext = _context.TGuests.Include(t => t.PayMethodNavigation).Include(t => t.Ticket);
-            return View(await zooContext.ToListAsync());
+            int pageNum = (int)Math.Ceiling(zooContext.Count() / (float)pageSize);
+            ViewBag.pageNum = pageNum;
+            var result = zooContext.Take(pageSize).ToList();
+            return View(result);
         }
         public IActionResult GuestFilter(string? keyword, int? pageIndex)
         {
