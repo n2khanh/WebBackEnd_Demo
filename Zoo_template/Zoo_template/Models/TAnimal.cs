@@ -15,8 +15,8 @@ public partial class TAnimal
 
     [StringLength(100)]
     [Display(Name = "Tên tiếng việt ")]
-    [Required(ErrorMessage = "Vui lòng nhập tên thú")]
-    public string? Name { get; set; }
+
+    public string Name { get; set; }
 
     [StringLength(100)]
     [Display(Name = "Tên khoa học ")]

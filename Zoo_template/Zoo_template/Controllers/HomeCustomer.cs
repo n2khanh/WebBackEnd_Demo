@@ -35,7 +35,7 @@ namespace Zoo_template.Controllers
 
         public IActionResult Index()
         {
-            return View("CustomerIndex");
+            return View();
         }
 
         private IEnumerable<SelectListItem> GetTicketOptions()

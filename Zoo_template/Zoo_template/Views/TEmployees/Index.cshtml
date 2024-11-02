@@ -57,14 +57,14 @@
                 </td>
                 <td>@Html.DisplayFor(modelItem => item.ResAreaNavigation.AreaName)</td>
                 <td>@Html.DisplayFor(modelItem => item.Shift.Name)</td>
-                @if (Context.Session.GetString("user") == "Admin")
-                {
+               
+                
                     <td class="text-center">
                         <a class="btn btn-sm btn-warning" asp-action="Edit" asp-route-id="@item.EmployeeId">Sửa</a>
                         <a class="btn btn-sm btn-info" asp-action="Details" asp-route-id="@item.EmployeeId">Chi tiết</a>
                         <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.EmployeeId">Xóa</a>
                     </td>
-                }
+                
             </tr>
         }
     </tbody>

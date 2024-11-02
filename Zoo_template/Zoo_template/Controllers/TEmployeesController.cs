@@ -31,7 +31,7 @@ namespace Zoo_template.Controllers
         }
         public IActionResult EmployeeFilter(string? keyword, int? pageIndex)
         {
-            IQueryable<TEmployee> employees = _context.TEmployees;
+            IQueryable<TEmployee> employees = _context.TEmployees.Include(t => t.ResAreaNavigation).Include(t => t.Shift);
 
             int page = (int)(pageIndex == null || pageIndex == 0 ? 1 : pageIndex);
             if (!string.IsNullOrEmpty(keyword))

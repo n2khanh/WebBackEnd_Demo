@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewData["Title"] - The Zoo</title>
-    <link rel="stylesheet" href="~/css/Index.css">
-    <link rel="stylesheet" href="~/css/site.css">
-    <link rel="stylesheet" href="~/css/themify-icons.css">
+    <title>@ViewData["Title"] - ZooDoo Đà Lạt</title>
+    <link rel="stylesheet" href="~/css/style.css">
 </head>
 <body>
-    <div id="main">
-        <partial name="HeaderLayout" />
-    </div>
-    <div class="container mt-4">
+
+    <!-- Include the Navbar Partial -->
+    @Html.Partial("_Navbar")
+
+    <!-- Main Content Section -->
+    <main role="main" class="container">
         @RenderBody()
-    </div>
+    </main>
+
 </body>
 </html>

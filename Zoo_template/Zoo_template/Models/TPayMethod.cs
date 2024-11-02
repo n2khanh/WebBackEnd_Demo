@@ -13,6 +13,8 @@ public partial class TPayMethod
     public int PayMethodId { get; set; }
 
     [StringLength(100)]
+    [Required(ErrorMessage = "Vui lòng nhập phương thức thanh toán ")]
+    [Display(Name = "Phương thức thanh toán")]
     public string? MethodName { get; set; }
 
     public bool? IsPayed { get; set; }

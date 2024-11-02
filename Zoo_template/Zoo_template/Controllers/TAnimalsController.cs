@@ -96,7 +96,7 @@ namespace Zoo_template.Controllers
         // POST: TAnimals/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AnimalId Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,CageId,Gender,Image,FoodId")] TAnimal tAnimal)
+        public async Task<IActionResult> Create([Bind("AnimalId, Name,ScienName,TimeIn,TimeOut,Age,SpeciesId,CageId,Gender,Image,FoodId")] TAnimal tAnimal)
         {
             if (ModelState.IsValid)
             {
@@ -217,7 +217,7 @@ namespace Zoo_template.Controllers
             if (file == null || file.Length == 0)
                 return Json(new { success = false, message = "No file uploaded." });
 
-            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+            var allowedExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif",".jfif" };
             var fileExtension = Path.GetExtension(file.FileName).ToLower();
 
             if (!allowedExtensions.Contains(fileExtension))

@@ -31,7 +31,7 @@ namespace Zoo_template.Controllers
         }
         public IActionResult GuestFilter(string? keyword, int? pageIndex)
         {
-            IQueryable<TGuest> Guests = _context.TGuests;
+            IQueryable<TGuest> Guests = _context.TGuests.Include(t => t.PayMethodNavigation).Include(t => t.Ticket);
 
             int page = (int)(pageIndex == null || pageIndex == 0 ? 1 : pageIndex);
             if (!string.IsNullOrEmpty(keyword))
@@ -111,7 +111,7 @@ namespace Zoo_template.Controllers
             {
                 return NotFound();
             }
-            ViewData["PayMethodId"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName");
+            ViewData["PayMethodID"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName");
             ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketName");
             return View(tGuest);
         }
@@ -121,7 +121,7 @@ namespace Zoo_template.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("GuestId,GuestName,DateOfBirth,PayMethod,PhoneNumber,Address,TicketId")] TGuest tGuest)
+        public async Task<IActionResult> Edit(int id, [Bind("GuestId,GuestName,DateOfBirth,PayMethodID,PhoneNumber,Address,TicketId")] TGuest tGuest)
         {
             if (id != tGuest.GuestId)
             {
@@ -148,7 +148,7 @@ namespace Zoo_template.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["PayMethod"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName", tGuest.PayMethodID);
+            ViewData["PayMethodID"] = new SelectList(_context.TPayMethods, "PayMethodId", "MethodName", tGuest.PayMethodID);
             ViewData["TicketId"] = new SelectList(_context.TTickets, "TicketId", "TicketName", tGuest.TicketId);
             return View(tGuest);
         }

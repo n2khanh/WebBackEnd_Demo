@@ -1,4 +1,4 @@
-﻿@model Zoo_template.Models.RegisterViewModel
+﻿@model Zoo_template.Models.TLogin
 @{
     ViewBag.Title = "Đăng Kí";
     Layout = "~/Views/Shared/Login_Layout.cshtml";
@@ -14,11 +14,6 @@
         <label asp-for="Password" class="font-weight-bold">Mật khẩu</label>
         <input asp-for="Password" type="password" class="form-control" placeholder="Nhập mật khẩu" />
         <span asp-validation-for="Password" class="text-danger"></span>
-    </div>
-    <div class="form-group">
-        <label asp-for="ConfirmPassword" class="font-weight-bold">Xác nhận mật khẩu</label>
-        <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Nhập lại mật khẩu" />
-        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
     </div>
     <div class="form-group">
         <label asp-for="Name" class="font-weight-bold">Họ và tên</label>

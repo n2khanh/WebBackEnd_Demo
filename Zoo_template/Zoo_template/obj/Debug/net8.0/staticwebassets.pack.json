@@ -1,6 +1,22 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\Data\\Giá vé.png",
+      "PackagePath": "staticwebassets\\Data\\Giá vé.png"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\Data\\aloa.png",
+      "PackagePath": "staticwebassets\\Data\\aloa.png"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\Data\\exit_icon.png",
+      "PackagePath": "staticwebassets\\Data\\exit_icon.png"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\Data\\images.png",
+      "PackagePath": "staticwebassets\\Data\\images.png"
+    },
+    {
       "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\css\\Component.css",
       "PackagePath": "staticwebassets\\css\\Component.css"
     },
@@ -21,6 +37,10 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
       "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\css\\themify-icons.css",
       "PackagePath": "staticwebassets\\css\\themify-icons.css"
     },
@@ -29,12 +49,96 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Tiger.jpg",
-      "PackagePath": "staticwebassets\\images\\Tiger.jpg"
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Cong.jpg",
+      "PackagePath": "staticwebassets\\images\\Cong.jpg"
     },
     {
-      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\WhiteTiger.jpg",
-      "PackagePath": "staticwebassets\\images\\WhiteTiger.jpg"
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Duoiuoi.jfif",
+      "PackagePath": "staticwebassets\\images\\Duoiuoi.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Gozilla.JPG",
+      "PackagePath": "staticwebassets\\images\\Gozilla.JPG"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Hac.jpg",
+      "PackagePath": "staticwebassets\\images\\Hac.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Hổ.jpg",
+      "PackagePath": "staticwebassets\\images\\Hổ.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Khi dit do.jfif",
+      "PackagePath": "staticwebassets\\images\\Khi dit do.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Nai.jfif",
+      "PackagePath": "staticwebassets\\images\\Nai.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Nemo.jfif",
+      "PackagePath": "staticwebassets\\images\\Nemo.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\Vẹt.jfif",
+      "PackagePath": "staticwebassets\\images\\Vẹt.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\caheo.jpg",
+      "PackagePath": "staticwebassets\\images\\caheo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\cấu.jfif",
+      "PackagePath": "staticwebassets\\images\\cấu.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\dadieu.jpg",
+      "PackagePath": "staticwebassets\\images\\dadieu.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\huoucaoco.jfif",
+      "PackagePath": "staticwebassets\\images\\huoucaoco.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\octopus.jfif",
+      "PackagePath": "staticwebassets\\images\\octopus.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\ran.jpg",
+      "PackagePath": "staticwebassets\\images\\ran.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\rong.jpg",
+      "PackagePath": "staticwebassets\\images\\rong.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\rùa.jpg",
+      "PackagePath": "staticwebassets\\images\\rùa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\sanho.png",
+      "PackagePath": "staticwebassets\\images\\sanho.png"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\sứa.jpg",
+      "PackagePath": "staticwebassets\\images\\sứa.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\trean.jfif",
+      "PackagePath": "staticwebassets\\images\\trean.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\voc.jfif",
+      "PackagePath": "staticwebassets\\images\\voc.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\voi.jfif",
+      "PackagePath": "staticwebassets\\images\\voi.jfif"
+    },
+    {
+      "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\images\\whiteTiger.jpg",
+      "PackagePath": "staticwebassets\\images\\whiteTiger.jpg"
     },
     {
       "Id": "C:\\Users\\Khanh\\Documents\\GitHub\\WebBackEnd_Demo\\Zoo_template\\Zoo_template\\wwwroot\\js\\site.js",

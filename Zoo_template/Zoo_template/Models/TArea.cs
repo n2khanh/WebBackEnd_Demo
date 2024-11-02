@@ -14,7 +14,7 @@ public partial class TArea
     public int AreaId { get; set; }
 
     [StringLength(100)]
-   
+    [Display(Name ="Tên khu vực")]
     public string? AreaName { get; set; }
 
     [StringLength(255)]
